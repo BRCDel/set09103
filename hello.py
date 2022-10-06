@@ -11,6 +11,13 @@ def hello():
 		return 'odd'
 	return 'done'
 
+@app.route('/404')
+def force404():
+	abort(404)
+
 @app.errorhandler(404)
 def page_not_found(error):
 	return "Whatever it is you're looking for, I don't have it.", 404
+
+if __name__ == "__main__":
+	app.run(host='0.0.0.0', debug=True)
