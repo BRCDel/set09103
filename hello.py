@@ -11,3 +11,6 @@ def hello():
 		return 'odd'
 	return 'done'
 
+@app.errorhandler(404)
+def page_not_found(error):
+	return "Whatever it is you're looking for, I don't have it.", 404
