@@ -35,6 +35,10 @@ def account():
 def accountName(name):
 	return "Hello %s" % name
 
+@app.route("/add/<int:first>/<int:second>")
+def add(first,second):
+	return str(first+second)
+
 @app.route('/404')
 def force404():
 	abort(404)
