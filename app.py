@@ -1,4 +1,4 @@
-from flask import Flask, abort, url_for, request
+from flask import Flask, abort, url_for, request, render_template
 import random
 app = Flask(__name__)
 
@@ -6,6 +6,28 @@ app = Flask(__name__)
 def home():
 	x =  random.randint(1,100)
 	return str(x)
+
+@app.route('/inherits/')
+def inherits():
+	return render_template('base.html')
+
+@app.route('/inherits/one')
+def inherits_one():
+	return render_template('extension.html')
+
+@app.route('/inherits/two')
+def inherits_two():
+	return render_template('second_extension.html')
+
+@app.route('/users')
+def users():
+	names = ['del', 'v', 'david', 'maine', 'rebb']
+	return render_template('users.html', names=names)
+
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name=None):
+	return render_template('hello.html', name=name)
 
 @app.route('/static/vmask')
 def static_example_img():
