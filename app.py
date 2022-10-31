@@ -121,4 +121,5 @@ if __name__ == "__main__":
 	app.run(
 		host=app.config['ip_address'], 
 		debug=app.config['DEBUG'],
-		port = int(app.config['port']))
+		port = int(app.config['port'])
+	)
