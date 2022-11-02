@@ -117,6 +117,7 @@ def page_not_found(error):
 	return "Whatever it is you're looking for, I don't have it. (Error 404: Not Found)", 404
 
 if __name__ == "__main__":
+	session = {}
 	init(app)
 	app.run(
 		host=app.config['ip_address'], 
