@@ -7,14 +7,14 @@ def init(app):
 	try:
 		#config_location = 'etc/defaults.cfg'
 		#config.read(config_location)
-		app.config.from_pyfile('etc/defaults.cfg')
+		app.config.from_object('etc/defaults.default_settings')
 
 		#app.config['DEBUG'] = config.get("config", "debug")
 		#app.config['ip_address'] = config.get("config", "ip_address")
 		#app.config['port'] = config.get("config", "port")
 		#app.config["url"] = config.get("config", "url")
 	except:
-		print("Couldn't read configs from: etc/defaults.cfg")
+		print("Couldn't read configs from etc/defaults.default_settings")
 
 @app.route('/')
 def home():
@@ -26,9 +26,7 @@ def config():
 	s = []
 	s.append('Config info follows')
 	s.append('debug: '+str(app.config['DEBUG']))
-	s.append('port: '+str(app.config['PORT']))
-	s.append('url: '+str(app.config['URL']))
-	s.append('ip_address: '+str(app.config['IPADDRESS']))
+	s.append('server_name: '+str(app.config['SERVER_NAME']))
 	return ', '.join(s)
 
 @app.route('/inherits/')
@@ -95,6 +93,4 @@ def page_not_found(error):
 
 if __name__ == "__main__":
 	init(app)
-	app.run(
-		app.config.from_pyfile('etc/defaults.cfg')
-	)
+	app.run(host="0.0.0.0",port=5000)
