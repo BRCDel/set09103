@@ -1,19 +1,20 @@
-from flask import Flask, abort, url_for, request, session, render_template
+from flask import Flask, abort, url_for, request, render_template
 import random, configparser
 app = Flask(__name__)
 
 def init(app):
 	config = configparser.ConfigParser()
 	try:
-		config_location = 'etc/defaults.cfg'
-		config.read(config_location)
+		#config_location = 'etc/defaults.cfg'
+		#config.read(config_location)
+		app.config.from_pyfile('etc/defaults.cfg')
 
-		app.config['DEBUG'] = config.get("config", "debug")
-		app.config['ip_address'] = config.get("config", "ip_address")
-		app.config['port'] = config.get("config", "port")
-		app.config["url"] = config.get("config", "url")
+		#app.config['DEBUG'] = config.get("config", "debug")
+		#app.config['ip_address'] = config.get("config", "ip_address")
+		#app.config['port'] = config.get("config", "port")
+		#app.config["url"] = config.get("config", "url")
 	except:
-		print("Couldn't read configs from: ", config_location)
+		print("Couldn't read configs from: etc/defaults.cfg")
 
 @app.route('/')
 def home():
@@ -25,9 +26,9 @@ def config():
 	s = []
 	s.append('Config info follows')
 	s.append('debug: '+str(app.config['DEBUG']))
-	s.append('port: '+str(app.config['port']))
-	s.append('url: '+str(app.config["url"]))
-	s.append('ip_address: '+str(app.config['ip_address']))
+	s.append('port: '+str(app.config['PORT']))
+	s.append('url: '+str(app.config['URL']))
+	s.append('ip_address: '+str(app.config['IPADDRESS']))
 	return ', '.join(s)
 
 @app.route('/inherits/')
@@ -93,10 +94,7 @@ def page_not_found(error):
 	return "Whatever it is you're looking for, I don't have it. (Error 404: Not Found)", 404
 
 if __name__ == "__main__":
-	session = {}
 	init(app)
 	app.run(
-		host=app.config['ip_address'], 
-		debug=app.config['DEBUG'],
-		port = int(app.config['port'])
+		app.config.from_pyfile('etc/defaults.cfg')
 	)
