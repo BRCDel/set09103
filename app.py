@@ -1,7 +1,6 @@
 from flask import Flask, abort, url_for, request, session, render_template
 import random, configparser
 app = Flask(__name__)
-app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 def init(app):
 	config = configparser.ConfigParser()
@@ -20,29 +19,6 @@ def init(app):
 def home():
 	x = random.randint(1,100)
 	return "Here's a random number: "+str(x)
-
-@app.route('/session/')
-def session():
-	return "sessions example root"
-
-@app.route('/session/write/<sessionName>/')
-def write(sessionName=None):
-	session['sessionName'] = sessionName
-	return "Wrote %s into 'sessionName' key of session" % sessionName
-
-@app.route('/session/read/')
-def read():
-	try:
-		if(session['sessionName']):
-			return str(session['sessionName'])
-	except KeyError:
-		pass
-	return "No session variable set for 'sessionName' key"
-
-@app.route('/session/remove/')
-def remove():
-	session.pop('sessionName', None)
-	return "Removed key 'sessionName' from session"
 
 @app.route('/config/')
 def config():
