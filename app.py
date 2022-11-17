@@ -1,4 +1,4 @@
-from flask import Flask, abort, url_for, request, render_template, session
+from flask import Flask, abort, url_for, request, flash, redirect, render_template, session
 import random, configparser
 app = Flask(__name__)
 app.secret_key = 'lol,lmao_even'
@@ -58,6 +58,19 @@ def read():
 def remove():
     session.pop('name', None)
     return "Removed key 'name' from session"
+
+@app.route('/login/')
+@app.route('/login/<message>/')
+def login(message=None):
+	if (message != None):
+		flash(message)
+	else:
+		flash('A default message')
+	return redirect(url_for('login_template'))
+
+@app.route('/login_template/')
+def login_template():
+	return render_template('login.html')
 
 @app.route('/inherits/')
 def inherits():
