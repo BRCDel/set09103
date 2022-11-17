@@ -1,20 +1,24 @@
-from flask import Flask, abort, url_for, request, render_template
+from flask import Flask, abort, url_for, request, render_template, session
 import random, configparser
 app = Flask(__name__)
+app.secret_key = 'lol,lmao_even'
 
 def init(app):
 	config = configparser.ConfigParser()
 	try:
-		#config_location = 'etc/defaults.cfg'
-		#config.read(config_location)
-		app.config.from_object('etc/defaults.default_settings')
+		print("INIT FUNCTION")
+		config_location = 'etc/defaults.cfg'
+		config.read(config_location)
+		#app.config.from_object('etc/defaults.default_settings')
 
-		#app.config['DEBUG'] = config.get("config", "debug")
-		#app.config['ip_address'] = config.get("config", "ip_address")
-		#app.config['port'] = config.get("config", "port")
-		#app.config["url"] = config.get("config", "url")
+		app.config['DEBUG'] = config.get("config", "debug")
+		app.config['ip_address'] = config.get("config", "ip_address")
+		app.config['port'] = config.get("config", "port")
+		app.config['url'] = config.get("config", "url")
 	except:
 		print("Couldn't read configs from etc/defaults.default_settings")
+
+init(app)
 
 @app.route('/')
 def home():
@@ -26,8 +30,34 @@ def config():
 	s = []
 	s.append('Config info follows')
 	s.append('debug: '+str(app.config['DEBUG']))
-	s.append('server_name: '+str(app.config['SERVER_NAME']))
+	s.append('port: '+app.config['port'])
+	s.append('url: '+app.config['url'])
+	s.append('ip_address: '+app.config['ip_address'])
 	return ', '.join(s)
+
+
+@app.route('/session/')
+def index():
+    return "Root route for the sessions example"
+
+@app.route('/session/write/<name>/')
+def write(name=None):
+    session['name'] = name
+    return "Wrote %s into 'name' key of session" % name
+
+@app.route('/session/read/')
+def read():
+    try:
+      if(session['name']):
+          return str(session['name'])
+    except KeyError:
+      pass
+    return "No session variable set for 'name' key"
+
+@app.route('/session/remove/')
+def remove():
+    session.pop('name', None)
+    return "Removed key 'name' from session"
 
 @app.route('/inherits/')
 def inherits():
