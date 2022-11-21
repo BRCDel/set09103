@@ -20,7 +20,7 @@ def init(app):
 init(app)
 
 @app.route('/')
-def home()
+def home():
 	return "Home page here"
 
 @app.route('/404')
