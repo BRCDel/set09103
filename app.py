@@ -1,33 +1,42 @@
 import random, configparser, sqlite3
 from sqlite3 import Error
-from flask import Flask, abort, url_for, request, flash, redirect, render_template, session
+from flask import Flask, abort, url_for, request, flash, redirect, render_template, session, g
 
 app = Flask(__name__)
 app.secret_key = 'lol,lmao_even'
+db_location = "db/core.db"
 
 #bless sqlitetutorial,net if this works
-def connect_db(db_file):
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-    except Error as e:
-        print(e)
-    finally:
-        if conn:
-            conn.close()
+def connect_db():
+    db = getattr(g, 'db', None)
+    if db is None:
+        db = sqlite3.connect(db_location)
+        g.db=db
+    return db
+
+@app.teardown_appcontext
+def disconnect_db(exception):
+    db = getattr(g, 'db', None)
+    if db is not None:
+        db.close()
+
+#def init_db():
+#    with app.app_context():
+#        db = get_db()
 
 def create_table(connection, statement):
     try:
-        cursor = conn.cursor()
+        cursor = connection.cursor()
         cursor.execute(statement)
     except Error as e:
         print(e)
 
 def init(app):
     config = configparser.ConfigParser()
-    connect_db(r"db/core.db")
-    lists_table_statement="""CREATE TABLE IF NOT EXISTS lists ( id integer PRIMARY KEY, username text NOT NULL, json TEXT NOT NULL )"""
-    create_table(lists_table_statement)
+    conn = connect_db("db/core.db")
+    lists_table_statement="""CREATE TABLE lists ( id integer PRIMARY KEY, username text NOT NULL, json TEXT NOT NULL )"""
+    create_table(conn, lists_table_statement)
+
     try:
         print("INIT FUNCTION")
         config_location = 'etc/defaults.cfg'
