@@ -1,11 +1,33 @@
+import random, configparser, sqlite3
+from sqlite3 import Error
 from flask import Flask, abort, url_for, request, flash, redirect, render_template, session
-import random, configparser
 
 app = Flask(__name__)
 app.secret_key = 'lol,lmao_even'
 
+#bless sqlitetutorial,net if this works
+def connect_db(db_file):
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+    except Error as e:
+        print(e)
+    finally:
+        if conn:
+            conn.close()
+
+def create_table(connection, statement):
+    try:
+        cursor = conn.cursor()
+        cursor.execute(statement)
+    except Error as e:
+        print(e)
+
 def init(app):
     config = configparser.ConfigParser()
+    connect_db(r"db/core.db")
+    lists_table_statement="""CREATE TABLE IF NOT EXISTS lists ( id integer PRIMARY KEY, username text NOT NULL, json TEXT NOT NULL )"""
+    create_table(lists_table_statement)
     try:
         print("INIT FUNCTION")
         config_location = 'etc/defaults.cfg'
@@ -17,6 +39,7 @@ def init(app):
         app.config['url'] = config.get("config", "url")
     except:
         print("Couldn't read configs from etc/defaults.default_settings")
+
 
 init(app)
 
