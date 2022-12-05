@@ -1,7 +1,6 @@
 import random, configparser, sqlite3
 from sqlite3 import Error
 from flask import Flask, abort, url_for, request, flash, redirect, render_template, session, g
-from datastore import init_db
 
 app = Flask(__name__)
 app.secret_key = 'lol,lmao_even'
@@ -20,13 +19,6 @@ def disconnect_db(exception):
     db = getattr(g, 'db', None)
     if db is not None:
         db.close()
-
-#def init_db():
-#    with app.app_context():
-#        db = get_db()
-#        with app.open_resource('schema.sql', mode='r') as f:
-#            db.cursor().executescript(f.read())
-#        db.commit
 
 def create_table(connection, statement):
     try:
@@ -57,9 +49,6 @@ init(app)
 @app.route('/')
 def home():
     db = get_db()
-#feed sample data into db, will do this later
-#    with app.open_resource('prepare.sql', mode='r') as load:
-#        db.cursor().executescript(load.read())
     return render_template('index.html')
 
 @app.route('/404')
@@ -72,5 +61,4 @@ def page_not_found(error):
 
 if __name__ == "__main__":
     init(app)
-    init_db()
     app.run(host="0.0.0.0", port=5000)
