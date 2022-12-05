@@ -1,6 +1,7 @@
 import random, configparser, sqlite3
 from sqlite3 import Error
 from flask import Flask, abort, url_for, request, flash, redirect, render_template, session, g
+from datastore import init_db
 
 app = Flask(__name__)
 app.secret_key = 'lol,lmao_even'
@@ -23,6 +24,9 @@ def disconnect_db(exception):
 #def init_db():
 #    with app.app_context():
 #        db = get_db()
+#        with app.open_resource('schema.sql', mode='r') as f:
+#            db.cursor().executescript(f.read())
+#        db.commit
 
 def create_table(connection, statement):
     try:
@@ -38,7 +42,6 @@ def init(app):
     create_table(conn, lists_table_statement)
 
     try:
-        print("INIT FUNCTION")
         config_location = 'etc/defaults.cfg'
         config.read(config_location)
 
@@ -49,12 +52,15 @@ def init(app):
     except:
         print("Couldn't read configs from etc/defaults.default_settings")
 
-
 init(app)
 
 @app.route('/')
 def home():
-    return "Home page here"
+    db = get_db()
+#feed sample data into db, will do this later
+#    with app.open_resource('prepare.sql', mode='r') as load:
+#        db.cursor().executescript(load.read())
+    return render_template('index.html')
 
 @app.route('/404')
 def force404():
@@ -66,4 +72,5 @@ def page_not_found(error):
 
 if __name__ == "__main__":
     init(app)
+    init_db()
     app.run(host="0.0.0.0", port=5000)
