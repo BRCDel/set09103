@@ -1,14 +1,28 @@
 DROP TABLE if EXISTS lists;
-DROP TABLE if EXISTS parts;
+DROP TABLE if EXISTS cpus;
+DROP TABLE if EXISTS mobos;
+DROP TABLE if EXISTS ram_kits;
+DROP TABLE if EXISTS gpus;
+DROP TABLE if EXISTS drives;
+DROP TABLE if EXISTS psus;
+DROP TABLE if EXISTS coolers;
+DROP TABLE if EXISTS cases;
 
 CREATE TABLE lists (
-    id integer NOT NULL,
+    id integer PRIMARY KEY NOT NULL,
     username text,
-    json_list text
+    cpu_id integer,
+    mobo_id integer,
+    ram_id integer,
+    gpu_id integer,
+    storage_id integer,
+    psu_id integer,
+    cooler_id integer,
+    case_id integer
 );
 
 CREATE TABLE cpus(
-    id integer NOT NULL,
+    id integer PRIMARY KEY NOT NULL,
     part_name text,
     core_count integer,
     thread_count integer,
@@ -20,7 +34,7 @@ CREATE TABLE cpus(
 )
 
 CREATE TABLE mobos(
-    id integer NOT NULL,
+    id integer PRIMARY KEY NOT NULL,
     part_name text,
     ram_type text,
     ram_slots integer,
@@ -31,7 +45,7 @@ CREATE TABLE mobos(
 )
 
 CREATE TABLE ram_kits(
-    id integer NOT NULL,
+    id integer PRIMARY KEY NOT NULL,
     part_name text,
     capacity integer,
     speed integer,
@@ -41,7 +55,7 @@ CREATE TABLE ram_kits(
 )
 
 CREATE TABLE gpus(
-    id integer NOT NULL,
+    id integer PRIMARY KEY NOT NULL,
     part_name text,
     core_count integer,
     base_clock integer,
@@ -53,7 +67,7 @@ CREATE TABLE gpus(
 )
 
 CREATE TABLE drives(
-    id integer NOT NULL,
+    id integer PRIMARY KEY NOT NULL,
     part_name text,
     capacity integer,
     interface text,
@@ -61,7 +75,7 @@ CREATE TABLE drives(
 )
 
 CREATE TABLE psus(
-    id integer NOT NULL,
+    id integer PRIMARY KEY NOT NULL,
     part_name text,
     wattage integer,
     modular text,
@@ -71,7 +85,7 @@ CREATE TABLE psus(
 )
 
 CREATE TABLE coolers(
-    id integer NOT NULL,
+    id integer PRIMARY KEY NOT NULL,
     part_name text,
     watts integer,
     fans text,
@@ -80,7 +94,7 @@ CREATE TABLE coolers(
 )
 
 CREATE TABLE cases(
-    id integer NOT NULL,
+    id integer PRIMARY KEY NOT NULL,
     part_name text,
     included_fans text,
     compatible_fans text,
