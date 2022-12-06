@@ -102,6 +102,7 @@ CREATE TABLE cases(
     mobo_type text,
     psu_type text,
     psu_size text,
+    cooler_height text,
     dimensions text,
     side_panel text,
     price real
