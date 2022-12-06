@@ -29,7 +29,7 @@ def create_table(connection, statement):
 
 def init(app):
     config = configparser.ConfigParser()
-    conn = connect_db("db/core.db")
+    conn = connect_db()
     lists_table_statement="""CREATE TABLE lists ( id integer PRIMARY KEY, username text NOT NULL, json TEXT NOT NULL )"""
     create_table(conn, lists_table_statement)
 
