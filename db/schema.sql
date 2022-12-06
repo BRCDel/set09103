@@ -99,6 +99,7 @@ CREATE TABLE cases(
     part_name text,
     included_fans text,
     compatible_fans text,
+    mobo_type text,
     psu_type text,
     psu_size text,
     dimensions text,
