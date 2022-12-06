@@ -47,7 +47,7 @@ def create_table(connection, statement):
 @app.route('/')
 def home():
     db = connect_db()
-    return render_template('index.html')
+    return render_template('static/index.html')
 
 @app.route('/404')
 def force404():
