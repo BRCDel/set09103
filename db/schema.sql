@@ -71,6 +71,7 @@ CREATE TABLE drives(
     part_name text,
     capacity integer,
     interface text,
+    drive_type text,
     price real
 );
 
