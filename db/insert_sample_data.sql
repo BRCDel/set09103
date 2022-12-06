@@ -35,9 +35,9 @@ INSERT INTO drives VALUES (6, "SeaGate IronWolf", 4000, "SATA 3", "HDD", 110.53)
 
 INSERT INTO psus VALUES (0, "Corsair CV450", 450, "Non-Modular", "80+ Bronze", 120, 43.97);
 INSERT INTO psus VALUES (1, "EVGA 500 BQ", 500, "Semi-Modular", "80+ Bronze", 120, 49.78);
-INSERT INTO psus VALUES (2, "Bitfenix Formula Gold 450", 450, "Non-Modular", 120, 72.56);
-INSERT INTO psus VALUES (3, "Fractal Design Ion Gold", 650, "Fully Modular", 120, 91.98);
-INSERT INTO psus VALUES (4, "be quiet! Pure Power 11 FM 750", 750, "Fully Modular", 120, 100.68);
+INSERT INTO psus VALUES (2, "Bitfenix Formula Gold 450", 450, "Non-Modular", "80+ Gold", 120, 72.56);
+INSERT INTO psus VALUES (3, "Fractal Design Ion Gold", 650, "Fully Modular", "80+ Gold", 120, 91.98);
+INSERT INTO psus VALUES (4, "be quiet! Pure Power 11 FM 750", 750, "Fully Modular", "80+ Gold", 120, 100.68);
 
 INSERT INTO coolers VALUES (0, "Vetroo V5", 95, "1x120mm", "Air", 23.99);
 INSERT INTO coolers VALUES (1, "Arctic Freezer 35 eSports Duo", 125, "2x120mm", "Air", 38.99);
