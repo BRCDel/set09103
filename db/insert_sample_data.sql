@@ -52,4 +52,4 @@ INSERT INTO cases VALUES (0, "CiT F3 Purple", "2x120mm", "4x120mm", "MicroATX", 
 INSERT INTO cases VALUES (1, "Cougar MX330-G", "1x120mm", "6x120mm", "ATX", "ATX", "155mm", "473 x 427 x 195", "Glass", 42.50);
 INSERT INTO cases VALUES (2, "CoolerMaster NR400", "2x120mm", "4x120mm + 2x140mm", "MicroATX", "ATX", "165mm", "411 x 411 x 210", "Glass", 63.57);
 INSERT INTO cases VALUES (3, "MagniumGear NEO V2", "None", "3x120mm", "ATX", "ATX", "155mm", "490  x 510 x 294", "Glass", 79.98);
-INSERT INTO cases VALUES (4, "Corsair 4000D Airflow", "2x120mm", "4x120mm + 2x140mm", "ATX", "ATX", "170mm", "453 x 466 x 230", 92.99);
+INSERT INTO cases VALUES (4, "Corsair 4000D Airflow", "2x120mm", "4x120mm + 2x140mm", "ATX", "ATX", "170mm", "453 x 466 x 230", "Glass", 92.99);
