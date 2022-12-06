@@ -102,6 +102,6 @@ CREATE TABLE cases(
     psu_type text,
     psu_size text,
     dimensions text,
-    glass text,
+    side_panel text,
     price real
 );
