@@ -6,6 +6,23 @@ app = Flask(__name__)
 app.secret_key = 'lol,lmao_even'
 db_location = "db/core.db"
 
+def init(app):
+    config = configparser.ConfigParser()
+    conn = connect_db()
+    lists_table_statement="""CREATE TABLE lists ( id integer PRIMARY KEY, username text NOT NULL, json TEXT NOT NULL )"""
+    create_table(conn, lists_table_statement)
+
+    try:
+        config_location = 'etc/defaults.cfg'
+        config.read(config_location)
+
+        app.config['DEBUG'] = config.get("config", "debug")
+        app.config['ip_address'] = config.get("config", "ip_address")
+        app.config['port'] = config.get("config", "port")
+        app.config['url'] = config.get("config", "url")
+    except:
+        print("Couldn't read configs from etc/defaults.default_settings")
+        
 #bless sqlitetutorial,net if this works
 def connect_db():
     db = getattr(g, 'db', None)
@@ -26,25 +43,6 @@ def create_table(connection, statement):
         cursor.execute(statement)
     except Error as e:
         print(e)
-
-def init(app):
-    config = configparser.ConfigParser()
-    conn = connect_db()
-    lists_table_statement="""CREATE TABLE lists ( id integer PRIMARY KEY, username text NOT NULL, json TEXT NOT NULL )"""
-    create_table(conn, lists_table_statement)
-
-    try:
-        config_location = 'etc/defaults.cfg'
-        config.read(config_location)
-
-        app.config['DEBUG'] = config.get("config", "debug")
-        app.config['ip_address'] = config.get("config", "ip_address")
-        app.config['port'] = config.get("config", "port")
-        app.config['url'] = config.get("config", "url")
-    except:
-        print("Couldn't read configs from etc/defaults.default_settings")
-
-init(app)
 
 @app.route('/')
 def home():
