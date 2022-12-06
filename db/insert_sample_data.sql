@@ -44,7 +44,7 @@ INSERT INTO coolers VALUES (1, "Arctic Freezer 35 eSports Duo", 125, "2x120mm", 
 INSERT INTO coolers VALUES (2, "Noctua NH-U12S Redux", 125, "1x120mm", "Air", 52.99);
 INSERT INTO coolers VALUES (3, "be quiet! Pure Loop 120", 165, "1x120mm", "Liquid", 76.45);
 INSERT INTO coolers VALUES (4, "DeepCool AK620", 220, "2x120mm", "Air", 82.33);
-INSERT INTO coolers VALUES (5, "Noctua NH-D15 chromax.black", 250, "2x135mm", "Air" 95.94);
+INSERT INTO coolers VALUES (5, "Noctua NH-D15 chromax.black", 250, "2x135mm", "Air", 95.94);
 INSERT INTO coolers VALUES (6, "Arctic Liquid Freezer II 240", 350, "2x120mm", "Liquid", 105.34);
 INSERT INTO coolers VALUES (7, "EK AIO Elite 360 D-RGB", 380, "3x120mm", "Liquid", 180.97);
 
