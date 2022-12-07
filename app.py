@@ -79,9 +79,11 @@ def home():
 #        print(list.keys())
         part_list_keys = list(part_list)
 #        print(part_list_keys)
-        for i in range(2, 10):
-            print(part_list)
-            query = "SELECT part_name FROM " + part_list_keys[i] + "s WHERE id = 0;"# + int(part_list[i]) + ";"
+        for x in part_list:
+            if x == "id" or x == "username":
+                continue
+#            print(part_list)
+            query = "SELECT part_name FROM " + part_list_keys[i] + "s WHERE id = " + part_list[x] + ";"
             print(query)
 #            part_list[i] = cur.execute(query)
 #        print(part_list)
