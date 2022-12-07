@@ -70,7 +70,7 @@ def home():
         user_made_parts_lists.append(list)
         user_made_parts_lists.append(",")
     print(user_made_parts_lists)
-    lists_names =
+#    lists_names =
 #   for list in lists:
 #        print(list.values())
     return render_template('index.html', lists=lists)
