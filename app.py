@@ -14,10 +14,6 @@ def connect_db():
         g.db=db
     return db
 
-db = connect_db()
-db.row_factory = sqlite3.Row
-cur = db.cursor()
-
 def init(app):
     config = configparser.ConfigParser()
 
@@ -48,9 +44,9 @@ def create_table(connection, statement):
 
 @app.route('/')
 def home():
-#    db = connect_db()
-#    db.row_factory = sqlite3.Row
-#    cur = db.cursor()
+    db = connect_db()
+    db.row_factory = sqlite3.Row
+    cur = db.cursor()
     cur.execute("SELECT * FROM lists")
     rows = cur.fetchall()
     user_made_parts_lists = []
@@ -79,6 +75,10 @@ def home():
 
 @app.route("/builder")
 def builder():
+    #I'd rather duplicate this code than spend hours trying to figure out page-to-page db persistence
+    db = connect_db()
+    db.row_factory = sqlite3.Row
+    cur = db.cursor()
     #placeholder list
     userlist = {
         "id" : 10,
