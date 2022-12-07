@@ -77,7 +77,8 @@ def home():
     return render_template('index.html', lists=user_made_parts_lists)
 
 @app.route("/builder")
-return render_template("builder.html")
+def builder():
+    return render_template("builder.html")
 
 @app.route('/404')
 def force404():
