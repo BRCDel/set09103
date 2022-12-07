@@ -57,7 +57,7 @@ def home():
         print("list username should be: ", row[1])
         lists += { "id" : row[0], "username" : row[1], "cpu_id" : row[2], "mobo_id" : row[3], "ram_id" : row[4], "gpu_id" : row[5], "storage_id" : row[6], "psu_id" : row[7], "cooler_id" : row[8], "case_id" : row[9] }
     print(lists)
-    return render_template('index.html')
+    return render_template('index.html', lists=lists)
 
 @app.route('/404')
 def force404():
