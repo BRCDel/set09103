@@ -84,7 +84,8 @@ def home():
                 continue
 #            print(part_list)
             query = "SELECT part_name FROM " + x + "s WHERE id = " + str(part_list[x]) + ";"
-            print(query)
+            part_list[x] = cur.execute(query)
+#            print(query)
 #            part_list[i] = cur.execute(query)
 #        print(part_list)
     return render_template('index.html', lists=user_made_parts_lists)
