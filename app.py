@@ -77,7 +77,20 @@ def home():
 
 @app.route("/builder")
 def builder():
-    return render_template("builder.html")
+    #placeholder list
+    userlist = {
+        "id" : 10,
+        "username" : "brcdel",
+        "cpu" : 3,
+        "mobo" : 4,
+        "ram_kit" : 2,
+        "gpu" : 6,
+        "drive" : 3,
+        "psu" : 3,
+        "cooler" : 4,
+        "pc_case" : 3
+    }
+    return render_template("builder.html", userlist=userlist)
 
 @app.route('/404')
 def force404():
