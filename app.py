@@ -81,7 +81,7 @@ def home():
 #        print(part_list_keys)
         for i in range(2, 10):
             print(part_list_keys[i])
-            query = "SELECT part_name FROM " + part_list_keys[i] + "s WHERE id = 0" + int(part_list[i]) + ";"
+            query = "SELECT part_name FROM " + part_list_keys[i] + "s WHERE id = " + int(part_list[i]) + ";"
             print(query)
 #            part_list[i] = cur.execute(query)
 #        print(part_list)
