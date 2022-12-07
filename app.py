@@ -5,9 +5,6 @@ from flask import Flask, abort, url_for, request, flash, redirect, render_templa
 app = Flask(__name__)
 app.secret_key = 'lol,lmao_even'
 db_location = "db/core.db"
-db = connect_db()
-db.row_factory = sqlite3.Row
-cur = db.cursor()
 
 #bless sqlitetutorial,net if this works
 def connect_db():
@@ -16,6 +13,10 @@ def connect_db():
         db = sqlite3.connect(db_location)
         g.db=db
     return db
+
+db = connect_db()
+db.row_factory = sqlite3.Row
+cur = db.cursor()
 
 def init(app):
     config = configparser.ConfigParser()
