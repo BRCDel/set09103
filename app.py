@@ -84,7 +84,8 @@ def home():
                 continue
 #            print(part_list)
             query = "SELECT part_name FROM " + x + "s WHERE id = " + str(part_list[x]) + ";"
-            part_list[x] = cur.execute(query)
+            result = cur.execute(query)
+            part_list[x] = result.fetchone()
 #            print(query)
 #            part_list[i] = cur.execute(query)
 #        print(part_list)
