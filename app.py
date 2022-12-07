@@ -56,7 +56,7 @@ def home():
     for row in rows:
         print("list ID should be: ", row[0])
         print("list username should be: ", row[1])
-        list = {
+        part_list = {
             "id" : int(row[0]),
             "username" : row[1],
             "cpu" : int(row[2]),
@@ -73,13 +73,13 @@ def home():
         user_made_parts_lists.append(list)
 #    print(user_made_parts_lists)
 #    print(type(user_made_parts_lists))
-    for list in user_made_parts_lists:
+    for part_list in user_made_parts_lists:
 #        print(type(list))
 #        print(list.values())
 #        print(list.keys())
         for i in range(2, 10):
-            list[i] = cur.execute("SELECT FROM " + list.keys()[i] + " WHERE id = " + list[i] + ";" )
-        print(list)
+            part_list[i] = cur.execute("SELECT FROM " + list(part_list)[i] + " WHERE id = " + part_list[i] + ";" )
+        print(part_list)
     return render_template('index.html', lists=user_made_parts_lists)
 
 @app.route('/404')
