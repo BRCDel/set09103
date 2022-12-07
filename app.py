@@ -51,12 +51,12 @@ def home():
     cur = db.cursor()
     cur.execute("SELECT * FROM lists")
     rows = cur.fetchall()
-    list_of_lists = []
+    lists = []
     for row in rows:
         print("list ID should be: ", row[0])
         print("list username should be: ", row[1])
-#        list_of_lists += { "id" : row[0], "username" : row[1], "cpu_id" : row[2], "mobo_id" : row[3], "ram_id" : row[4], "gpu_id" : row[5], "storage_id" : row[6], "psu_id" : row[7], "cooler_id" : row[8], "case_id" : row[9] }
-    print(list_of_lists)
+        lists += { "id" : row[0], "username" : row[1], "cpu_id" : row[2], "mobo_id" : row[3], "ram_id" : row[4], "gpu_id" : row[5], "storage_id" : row[6], "psu_id" : row[7], "cooler_id" : row[8], "case_id" : row[9] }
+    print(lists)
     return render_template('index.html')
 
 @app.route('/404')
