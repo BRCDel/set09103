@@ -47,6 +47,11 @@ def create_table(connection, statement):
 @app.route('/')
 def home():
     db = connect_db()
+    cur = db.cursor()
+    cur.execute("SELECT * FROM lists")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
     return render_template('index.html')
 
 @app.route('/404')
