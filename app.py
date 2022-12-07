@@ -67,7 +67,6 @@ def home():
         }
         user_made_parts_lists.append(part_list)
     for part_list in user_made_parts_lists:
-        part_list_keys = list(part_list)
         for x in part_list:
             if x == "id" or x == "username":
                 continue
