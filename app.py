@@ -5,12 +5,21 @@ from flask import Flask, abort, url_for, request, flash, redirect, render_templa
 app = Flask(__name__)
 app.secret_key = 'lol,lmao_even'
 db_location = "db/core.db"
+db = connect_db()
+db.row_factory = sqlite3.Row
+cur = db.cursor()
+
+#bless sqlitetutorial,net if this works
+def connect_db():
+    db = getattr(g, 'db', None)
+    if db is None:
+        db = sqlite3.connect(db_location)
+        g.db=db
+    return db
 
 def init(app):
     config = configparser.ConfigParser()
-    db = connect_db()
-    db.row_factory = sqlite3.Row
-    cur = db.cursor()
+
 
     try:
         config_location = 'etc/defaults.cfg'
@@ -22,14 +31,6 @@ def init(app):
         app.config['url'] = config.get("config", "url")
     except:
         print("Couldn't read configs from etc/defaults.default_settings")
-        
-#bless sqlitetutorial,net if this works
-def connect_db():
-    db = getattr(g, 'db', None)
-    if db is None:
-        db = sqlite3.connect(db_location)
-        g.db=db
-    return db
 
 @app.teardown_appcontext
 def disconnect_db(exception):
@@ -46,9 +47,9 @@ def create_table(connection, statement):
 
 @app.route('/')
 def home():
-    db = connect_db()
-    db.row_factory = sqlite3.Row
-    cur = db.cursor()
+#    db = connect_db()
+#    db.row_factory = sqlite3.Row
+#    cur = db.cursor()
     cur.execute("SELECT * FROM lists")
     rows = cur.fetchall()
     user_made_parts_lists = []
