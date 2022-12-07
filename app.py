@@ -51,7 +51,7 @@ def home():
     cur = db.cursor()
     cur.execute("SELECT * FROM lists")
     rows = cur.fetchall()
-    lists = []
+    user_made_parts_lists = []
     for row in rows:
         print("list ID should be: ", row[0])
         print("list username should be: ", row[1])
@@ -67,11 +67,12 @@ def home():
             "cooler_id" : int(row[8]),
             "case_id" : int(row[9])
         }
-        lists.append(list)
-    print(lists)
+        user_made_parts_lists.append(list)
+        user_made_parts_lists.append(",")
+    print(user_made_parts_lists)
     lists_names = []
     for list in lists:
-        print(list.values())
+     #   print(list.values())
     return render_template('index.html', lists=lists)
 
 @app.route('/404')
