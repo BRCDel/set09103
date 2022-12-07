@@ -59,7 +59,7 @@ def home():
     print(lists)
     lists_names = []
     for list in lists:
-        for i in range(2, 10):
+        for i in range(2, 9):
             print(list[i])
     return render_template('index.html', lists=lists)
 
