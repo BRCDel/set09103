@@ -76,8 +76,9 @@ def home():
     for list in user_made_parts_lists:
         print(type(list))
         print(list.values())
+        print(list.keys())
 #        for i in range(2, 10):
-#            list.value
+#            list[i] = cur.execute("SELECT FROM " + )
     return render_template('index.html', lists=user_made_parts_lists)
 
 @app.route('/404')
