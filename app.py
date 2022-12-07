@@ -52,10 +52,7 @@ def home():
     cur.execute("SELECT * FROM lists")
     rows = cur.fetchall()
     user_made_parts_lists = []
-#    print(type(user_made_parts_lists))
     for row in rows:
-#        print("list ID should be: ", row[0])
-#        print("list username should be: ", row[1])
         part_list = {
             "id" : int(row[0]),
             "username" : row[1],
@@ -68,27 +65,15 @@ def home():
             "cooler" : int(row[8]),
             "pc_case" : int(row[9])
         }
-        #print(type(list))
-        #print(list.values())
         user_made_parts_lists.append(part_list)
-#    print(user_made_parts_lists)
-#    print(type(user_made_parts_lists))
     for part_list in user_made_parts_lists:
-#        print(type(part_list))
-#        print(list.values())
-#        print(list.keys())
         part_list_keys = list(part_list)
-#        print(part_list_keys)
         for x in part_list:
             if x == "id" or x == "username":
                 continue
-#            print(part_list)
             query = "SELECT part_name FROM " + x + "s WHERE id = " + str(part_list[x]) + ";"
             result = cur.execute(query)
             part_list[x] = result.fetchone()[0]
-#            print(query)
-#            part_list[i] = cur.execute(query)
-#        print(part_list)
     return render_template('index.html', lists=user_made_parts_lists)
 
 @app.route('/404')

@@ -4,7 +4,6 @@ INSERT INTO lists VALUES (2, "darth_vaper", 1, 1, 1, 1, 1, 1, 1, 1);
 INSERT INTO lists VALUES (3, "potato_man", 2, 2, 2, 2, 2, 2, 2, 2);
 INSERT INTO lists VALUES (4, "jerrytheai", 3, 3, 3, 3, 3, 3, 3, 3);
 
-
 INSERT INTO cpus VALUES (0, "Intel Core i3-12100", 4, 8, 3.3, 4.3, 1, 89, 100);
 INSERT INTO cpus VALUES (1, "Intel Core i5-12400", 6, 12, 2.5, 4.4, 1, 117, 180);
 INSERT INTO cpus VALUES (2, "Intel Core i5-12600K", 6, 16, 3.7, 4.9, 1, 150, 250);
