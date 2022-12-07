@@ -73,7 +73,7 @@ def home():
 #    lists_names =
 #   for list in lists:
 #        print(list.values())
-    return render_template('index.html', lists=lists)
+    return render_template('index.html', lists=user_made_parts_lists)
 
 @app.route('/404')
 def force404():
