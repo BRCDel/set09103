@@ -52,10 +52,10 @@ def home():
     cur.execute("SELECT * FROM lists")
     rows = cur.fetchall()
     user_made_parts_lists = []
-    print(type(user_made_parts_lists))
+#    print(type(user_made_parts_lists))
     for row in rows:
-        print("list ID should be: ", row[0])
-        print("list username should be: ", row[1])
+#        print("list ID should be: ", row[0])
+#        print("list username should be: ", row[1])
         part_list = {
             "id" : int(row[0]),
             "username" : row[1],
@@ -78,9 +78,9 @@ def home():
 #        print(list.values())
 #        print(list.keys())
         part_list_keys = list(part_list)
-        print(part_list_keys, type(part_list_keys))
-#        for i in range(2, 10):
-#            part_list[i] = cur.execute("SELECT FROM " + part_list_keys[i] + " WHERE id = " + part_list[i] + ";" )
+#        print(part_list_keys, type(part_list_keys))
+        for i in range(2, 10):
+            part_list[i] = cur.execute("SELECT FROM " + part_list_keys[i] + " WHERE id = " + part_list[i] + ";" )
         print(part_list)
     return render_template('index.html', lists=user_made_parts_lists)
 
