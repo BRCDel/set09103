@@ -55,8 +55,8 @@ INSERT INTO coolers VALUES (5, "Noctua NH-D15 chromax.black", 250, "2x135mm", "A
 INSERT INTO coolers VALUES (6, "Arctic Liquid Freezer II 240", 350, "2x120mm", "Liquid", 105.34);
 INSERT INTO coolers VALUES (7, "EK AIO Elite 360 D-RGB", 380, "3x120mm", "Liquid", 180.97);
 
-INSERT INTO cases VALUES (0, "CiT F3 Purple", "2x120mm", "4x120mm", "MicroATX", "ATX", "140mm", "412 x 366 x 208", "Acrylic", 26.40);
-INSERT INTO cases VALUES (1, "Cougar MX330-G", "1x120mm", "6x120mm", "ATX", "ATX", "155mm", "473 x 427 x 195", "Glass", 42.50);
-INSERT INTO cases VALUES (2, "CoolerMaster NR400", "2x120mm", "4x120mm + 2x140mm", "MicroATX", "ATX", "165mm", "411 x 411 x 210", "Glass", 63.57);
-INSERT INTO cases VALUES (3, "MagniumGear NEO V2", "None", "3x120mm", "ATX", "ATX", "155mm", "490  x 510 x 294", "Glass", 79.98);
-INSERT INTO cases VALUES (4, "Corsair 4000D Airflow", "2x120mm", "4x120mm + 2x140mm", "ATX", "ATX", "170mm", "453 x 466 x 230", "Glass", 92.99);
+INSERT INTO pc_cases VALUES (0, "CiT F3 Purple", "2x120mm", "4x120mm", "MicroATX", "ATX", "140mm", "412 x 366 x 208", "Acrylic", 26.40);
+INSERT INTO pc_cases VALUES (1, "Cougar MX330-G", "1x120mm", "6x120mm", "ATX", "ATX", "155mm", "473 x 427 x 195", "Glass", 42.50);
+INSERT INTO pc_cases VALUES (2, "CoolerMaster NR400", "2x120mm", "4x120mm + 2x140mm", "MicroATX", "ATX", "165mm", "411 x 411 x 210", "Glass", 63.57);
+INSERT INTO pc_cases VALUES (3, "MagniumGear NEO V2", "None", "3x120mm", "ATX", "ATX", "155mm", "490  x 510 x 294", "Glass", 79.98);
+INSERT INTO pc_cases VALUES (4, "Corsair 4000D Airflow", "2x120mm", "4x120mm + 2x140mm", "ATX", "ATX", "170mm", "453 x 466 x 230", "Glass", 92.99);
