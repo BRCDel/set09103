@@ -11,14 +11,14 @@ DROP TABLE IF EXISTS cases;
 CREATE TABLE lists (
     id integer PRIMARY KEY NOT NULL,
     username text,
-    cpu_id integer,
-    mobo_id integer,
-    ram_id integer,
-    gpu_id integer,
-    storage_id integer,
-    psu_id integer,
-    cooler_id integer,
-    case_id integer
+    cpu integer,
+    mobo integer,
+    ram_kit integer,
+    gpu integer,
+    drive integer,
+    psu integer,
+    cooler integer,
+    case integer
 );
 
 CREATE TABLE cpus(

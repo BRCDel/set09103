@@ -59,14 +59,14 @@ def home():
         list = {
             "id" : int(row[0]),
             "username" : row[1],
-            "cpu_id" : int(row[2]),
-            "mobo_id" : int(row[3]),
-            "ram_id" : int(row[4]),
-            "gpu_id" : int(row[5]),
-            "storage_id" : int(row[6]),
-            "psu_id" : int(row[7]),
-            "cooler_id" : int(row[8]),
-            "case_id" : int(row[9])
+            "cpu" : int(row[2]),
+            "mobo" : int(row[3]),
+            "ram_kit" : int(row[4]),
+            "gpu" : int(row[5]),
+            "drive" : int(row[6]),
+            "psu" : int(row[7]),
+            "cooler" : int(row[8]),
+            "case" : int(row[9])
         }
         #print(type(list))
         #print(list.values())
@@ -74,8 +74,10 @@ def home():
     print(user_made_parts_lists)
     print(type(user_made_parts_lists))
     for list in user_made_parts_lists:
-       print(type(list))
-       print(list.values())
+        print(type(list))
+        print(list.values())
+#        for i in range(2, 10):
+#            list.value
     return render_template('index.html', lists=user_made_parts_lists)
 
 @app.route('/404')
