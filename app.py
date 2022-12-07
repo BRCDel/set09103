@@ -95,9 +95,10 @@ def builder():
     for x in userlist:
         if x == "id" or x == "username":
             continue
-        query = "SELECT part_name FROM " + x + "s WHERE id = " + str(x) + ";"
+        query = "SELECT part_name FROM " + x + "s WHERE id = " + str(userlist[x]) + ";"
         result = cur.execute(query)
-        x = result.fetchone()[0]
+        print(result)
+#        x = result.fetchone()
     return render_template("builder.html", userlist=userlist)
 
 @app.route('/404')
