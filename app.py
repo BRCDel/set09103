@@ -67,7 +67,7 @@ def home():
             "cooler_id" : int(row[8]),
             "case_id" : int(row[9])
         }
-        lists += list
+        lists.append(list)
     print(lists)
     lists_names = []
     for list in lists:
