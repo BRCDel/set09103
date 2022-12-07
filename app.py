@@ -84,12 +84,12 @@ def builder():
         "id" : 10,
         "username" : "brcdel",
         "cpu" : 3,
-        "mobo" : 4,
+        "mobo" : 3,
         "ram_kit" : 2,
-        "gpu" : 6,
+        "gpu" : 3,
         "drive" : 3,
         "psu" : 3,
-        "cooler" : 4,
+        "cooler" : 3,
         "pc_case" : 3
     }
     for x in userlist:
