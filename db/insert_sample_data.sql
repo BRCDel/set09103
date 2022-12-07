@@ -1,6 +1,6 @@
 INSERT INTO lists VALUES (0, "del", 2, 3, 3, 6, 4, 3, 5, 4);
-INSERT INTO lists VALUES (1, "s1w3lls", 0, 0, 0, 0, 0, 0, 0, 0);
-INSERT INTO lists VALUES (2, "darth_vaper_69", 1, 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO lists VALUES (1, "laser_shark7", 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO lists VALUES (2, "darth_vaper", 1, 1, 1, 1, 1, 1, 1, 1);
 INSERT INTO lists VALUES (3, "potato_man", 2, 2, 2, 2, 2, 2, 2, 2);
 INSERT INTO lists VALUES (4, "jerrytheai", 3, 3, 3, 3, 3, 3, 3, 3);
 
