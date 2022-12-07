@@ -52,6 +52,7 @@ def home():
     cur.execute("SELECT * FROM lists")
     rows = cur.fetchall()
     user_made_parts_lists = []
+    print(type(user_made_parts_lists))
     for row in rows:
         print("list ID should be: ", row[0])
         print("list username should be: ", row[1])
@@ -67,8 +68,10 @@ def home():
             "cooler_id" : int(row[8]),
             "case_id" : int(row[9])
         }
+        print(type(list))
         user_made_parts_lists.append(list)
     print(user_made_parts_lists)
+    print(type(user_made_parts_lists))
 #    lists_names =
 #   for list in lists:
 #        print(list.values())
