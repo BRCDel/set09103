@@ -68,14 +68,14 @@ def home():
             "cooler_id" : int(row[8]),
             "case_id" : int(row[9])
         }
-        print(type(list))
-        print(list.values())
+        #print(type(list))
+        #print(list.values())
         user_made_parts_lists.append(list)
     print(user_made_parts_lists)
     print(type(user_made_parts_lists))
     for list in user_made_parts_lists:
        print(type(list))
-#      print(list.values())
+       print(list.values())
     return render_template('index.html', lists=user_made_parts_lists)
 
 @app.route('/404')
