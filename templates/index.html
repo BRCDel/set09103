@@ -12,8 +12,6 @@
 	</ul>
 	<div id="recents">
 		<p id="recents_title">Recently added lists</p>
-		<!--this'll be replaced by template placeholders-->
-        <!-- { lists.first } -->
 		<ul>
             <li>Made by {{ lists[1].username }}</li>
 			<li>{{ lists[1].cpu }}</li>
@@ -24,7 +22,6 @@
             <li>{{ lists[1].cooler }}</li>
 			<li>{{ lists[1].psu }}</li>
 		</ul>
-        <!-- { lists.second } -->
 		<ul>
             <li> Made by {{ lists[2].username }}</li>
             <li>{{ lists[2].cpu }}</li>
@@ -35,7 +32,6 @@
             <li>{{ lists[2].cooler }}</li>
             <li>{{ lists[2].psu }}</li>
 		</ul>
-        <!-- { lists.third } -->
 		<ul>
         <li> Made by {{ lists[3].username }}</li>
             <li>{{ lists[3].cpu }}</li>
@@ -46,22 +42,10 @@
             <li>{{ lists[3].cooler }}</li>
             <li>{{ lists[3].psu }}</li>
 		</ul>
-        <!-- { lists.fouth } -->
-		<ul>
-            <li> Made by {{ lists[4].username }}</li>
-            <li>{{ lists[4].cpu }}</li>
-            <li>{{ lists[4].mobo }}</li>
-            <li>{{ lists[4].ram_kit }}</li>
-            <li>{{ lists[4].gpu }}</li>
-            <li>{{ lists[4].pc_case }}</li>
-            <li>{{ lists[4].cooler }}</li>
-            <li>{{ lists[4].psu }}</li>
-		</ul>
 		
 	</div>
 	<div id="featured">
 		<p>Today's featured list</p>
-		<!--more template placeholders soontm-->
 		<ul>
             <li> Made by {{ lists[0].username }}</li>
             <li>{{ lists[0].cpu }}</li>
