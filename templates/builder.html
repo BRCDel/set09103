@@ -1,4 +1,5 @@
 <!doctype html>
+<html>
 <head>
 <meta charset="UTF-8"/>
     <title>Del's PC Builder</title>
@@ -15,12 +16,14 @@
     </ul>
     <p>Parts list</p>
     <ul>
-        <li>CPU: {{ userlist.cpu }} <button> Choose</button></li>
-        <li>Mobo: {{ userlist.mobo }} <button> Choose</button></li>
-        <li>RAM: {{ userlist.ram_kit }} <button> Choose</button></li>
-        <li>GPU: {{ userlist.gpu }} <button> Choose</button></li>
-        <li>Storage: {{ userlist.drive }} <button> Choose</button></li>
-        <li>PSU: {{ userlist.psu }} <button> Choose</button></li>
-        <li>Cooler: {{ userlist.cooler }} <button> Choose</button></li>
-        <li>Case: {{ userlist.pc_case }} <button> Choose</button></li>
+        <li>CPU: {{ userlist.cpu }} <button href="/choose?part=cpu"> Choose</button></li>
+        <li>Mobo: {{ userlist.mobo }} <button href="/choose?part=mobo"> Choose</button></li>
+        <li>RAM: {{ userlist.ram_kit }} <button href="/choose?part=ram_kit"> Choose</button></li>
+        <li>GPU: {{ userlist.gpu }} <button href="/choose?part=gpu"> Choose</button></li>
+        <li>Storage: {{ userlist.drive }} <button href="/choose?part=drive"> Choose</button></li>
+        <li>PSU: {{ userlist.psu }} <button href="/choose?part=psu"> Choose</button></li>
+        <li>Cooler: {{ userlist.cooler }} <button href="/choose?part=cooler"> Choose</button></li>
+        <li>Case: {{ userlist.pc_case }} <button href="/choose?part=pc_case"> Choose</button></li>
     </ul>
+</body>
+</html>
