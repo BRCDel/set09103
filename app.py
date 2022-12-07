@@ -83,7 +83,7 @@ def home():
             if x == "id" or x == "username":
                 continue
 #            print(part_list)
-            query = "SELECT part_name FROM " + part_list_keys[i] + "s WHERE id = " + part_list[x] + ";"
+            query = "SELECT part_name FROM " + x + "s WHERE id = " + part_list[x] + ";"
             print(query)
 #            part_list[i] = cur.execute(query)
 #        print(part_list)
