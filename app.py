@@ -77,7 +77,7 @@ def home():
 #        print(type(part_list))
 #        print(list.values())
 #        print(list.keys())
-        part_list_keys = part_list.keys()
+        part_list_keys = list(part_list)
         print(part_list_keys, type(part_list_keys))
 #        for i in range(2, 10):
 #            part_list[i] = cur.execute("SELECT FROM " + part_list_keys[i] + " WHERE id = " + part_list[i] + ";" )
