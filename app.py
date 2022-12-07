@@ -55,8 +55,18 @@ def home():
     for row in rows:
         print("list ID should be: ", row[0])
         print("list username should be: ", row[1])
-        list = { "id" : int(row[0]), "username" : row[1], "cpu_id" : int(row[2]), "mobo_id" : int(row[3]),
-                 "ram_id" : int(row[4]), "gpu_id" : int(row[5]), "storage_id" : int(row[6]), "psu_id" : int(row[7]), "cooler_id" : int(row[8]), "case_id" : int(row[9]) }
+        list = {
+            "id" : int(row[0]),
+            "username" : row[1],
+            "cpu_id" : int(row[2]),
+            "mobo_id" : int(row[3]),
+            "ram_id" : int(row[4]),
+            "gpu_id" : int(row[5]),
+            "storage_id" : int(row[6]),
+            "psu_id" : int(row[7]),
+            "cooler_id" : int(row[8]),
+            "case_id" : int(row[9])
+        }
         lists += list
     print(lists)
     lists_names = []
