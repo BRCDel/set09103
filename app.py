@@ -68,7 +68,6 @@ def home():
             "case_id" : int(row[9])
         }
         user_made_parts_lists.append(list)
-        user_made_parts_lists.append(",")
     print(user_made_parts_lists)
 #    lists_names =
 #   for list in lists:
