@@ -1,4 +1,12 @@
-DROP TABLE IF EXISTS *
+DROP TABLE IF EXISTS lists;
+DROP TABLE IF EXISTS cpus;
+DROP TABLE IF EXISTS mobos;
+DROP TABLE IF EXISTS ram_kits;
+DROP TABLE IF EXISTS gpus;
+DROP TABLE IF EXISTS drives;
+DROP TABLE IF EXISTS psus;
+DROP TABLE IF EXISTS coolers;
+DROP TABLE IF EXISTS pc_cases;
 
 CREATE TABLE lists (
     id integer PRIMARY KEY NOT NULL,
@@ -86,7 +94,7 @@ CREATE TABLE coolers(
     price real
 );
 
-CREATE TABLE cases(
+CREATE TABLE pc_cases(
     id integer PRIMARY KEY NOT NULL,
     part_name text,
     included_fans text,
