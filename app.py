@@ -70,16 +70,16 @@ def home():
         }
         #print(type(list))
         #print(list.values())
-        user_made_parts_lists.append(list)
+        user_made_parts_lists.append(part_list)
 #    print(user_made_parts_lists)
 #    print(type(user_made_parts_lists))
     for part_list in user_made_parts_lists:
-        print(type(part_list))
+#        print(type(part_list))
 #        print(list.values())
 #        print(list.keys())
-#        part_list_keys = part_list.keys()
-#        for i in range(2, 10):
-#            part_list[i] = cur.execute("SELECT FROM " + part_list_keys[i] + " WHERE id = " + part_list[i] + ";" )
+        part_list_keys = part_list.keys()
+        for i in range(2, 10):
+            part_list[i] = cur.execute("SELECT FROM " + part_list_keys[i] + " WHERE id = " + part_list[i] + ";" )
         print(part_list)
     return render_template('index.html', lists=user_made_parts_lists)
 
