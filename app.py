@@ -100,6 +100,10 @@ def builder():
         userlist[x] = result.fetchone()[0]
     return render_template("builder.html", userlist=userlist)
 
+@app.route('/choose')
+def choose():
+    return render_template("choose.html")
+
 @app.route('/404')
 def force404():
     abort(404)
