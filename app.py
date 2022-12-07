@@ -71,8 +71,8 @@ def home():
         #print(type(list))
         #print(list.values())
         user_made_parts_lists.append(list)
-    print(user_made_parts_lists)
-    print(type(user_made_parts_lists))
+#    print(user_made_parts_lists)
+#    print(type(user_made_parts_lists))
     for list in user_made_parts_lists:
         print(type(list))
         print(list.values())
