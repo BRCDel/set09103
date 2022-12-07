@@ -77,8 +77,9 @@ def home():
 #        print(type(list))
 #        print(list.values())
 #        print(list.keys())
+        part_list_keys = part_list.keys()
         for i in range(2, 10):
-            part_list[i] = cur.execute("SELECT FROM " + list(part_list)[i] + " WHERE id = " + part_list[i] + ";" )
+            part_list[i] = cur.execute("SELECT FROM " + part_list_keys[i] + " WHERE id = " + part_list[i] + ";" )
         print(part_list)
     return render_template('index.html', lists=user_made_parts_lists)
 
