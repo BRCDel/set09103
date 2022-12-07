@@ -60,7 +60,7 @@ def home():
     lists_names = []
     for list in lists:
         for i in range(2, 10):
-            print(i)
+            print(list[i])
     return render_template('index.html', lists=lists)
 
 @app.route('/404')
