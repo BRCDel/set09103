@@ -98,7 +98,7 @@ def builder():
         query = "SELECT part_name FROM " + x + "s WHERE id = " + str(userlist[x]) + ";"
         result = cur.execute(query)
         print(result)
-#        x = result.fetchone()
+        x = list(result)[0]
     return render_template("builder.html", userlist=userlist)
 
 @app.route('/404')
