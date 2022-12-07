@@ -51,10 +51,10 @@ def home():
     cur = db.cursor()
     cur.execute("SELECT * FROM lists")
     rows = cur.fetchall()
+    list_of_lists = []
     for row in rows:
-        print(row)
-        for value in row:
-            print(value)
+        list_of_lists += { "id" : row[0], "username" : row[1], "cpu_id" : row[2], "mobo_id" : row[3], "ram_id" : row[4], "gpu_id" : row[5], "storage_id" : row[6], "psu_id" : row[7], "cooler_id" : row[8], "case_id" : row[9] }
+    print(list_of_lists_)
     return render_template('index.html')
 
 @app.route('/404')
