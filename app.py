@@ -95,7 +95,7 @@ def builder():
     for x in userlist:
         if x == "id" or x == "username":
             continue
-        query = "SELECT part_name FROM " + x + "s WHERE id = " + str(userlist[x]) + ";"
+        query = "SELECT part_name FROM " + x + "s WHERE id = " + str(x) + ";"
         result = cur.execute(query)
         x = result.fetchone()[0]
     return render_template("builder.html", userlist=userlist)
