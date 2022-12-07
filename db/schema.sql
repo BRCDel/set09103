@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS gpus;
 DROP TABLE IF EXISTS drives;
 DROP TABLE IF EXISTS psus;
 DROP TABLE IF EXISTS coolers;
-DROP TABLE IF EXISTS cases;
+DROP TABLE IF EXISTS pc_cases;
 
 CREATE TABLE lists (
     id integer PRIMARY KEY NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE lists (
     drive integer,
     psu integer,
     cooler integer,
-    case integer
+    pc_case integer
 );
 
 CREATE TABLE cpus(

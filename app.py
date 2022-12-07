@@ -66,7 +66,7 @@ def home():
             "drive" : int(row[6]),
             "psu" : int(row[7]),
             "cooler" : int(row[8]),
-            "case" : int(row[9])
+            "pc_case" : int(row[9])
         }
         #print(type(list))
         #print(list.values())
