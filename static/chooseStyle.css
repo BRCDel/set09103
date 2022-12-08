@@ -11,4 +11,5 @@ li a{
     display:flex;
     flex-direction:row;
     justify-content:space-evenly;
+    flex-shrink:0;
 }
