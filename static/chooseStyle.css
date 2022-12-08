@@ -7,6 +7,6 @@ li a{
     align-items:left;
     justify-content:space-around;
 }
-#select_part{
-    
+#attributes{
+    float:left
 }
