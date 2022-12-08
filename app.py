@@ -96,11 +96,11 @@ def builder():
         "pc_case" : session.get('pc_case')
     }
     #If we're returning here from the Choose page, find the item type and id and throw it into the Session data
-#    itemToAddType = request.args.get('type')
-#    itemToAddId = request.args.get('itemId')
-#    if itemToAddId is not None:
-#        print(type)
-#        session[type] = itemId
+    itemToAddType = request.args.get('type')
+    itemToAddId = request.args.get('itemId')
+    if itemToAddId is not None:
+#        print(itemToAddType)
+        session[itemToAddType] = itemId
     print(session['id'])
     for x in userlist:
         if x == "id" or x == "username":
