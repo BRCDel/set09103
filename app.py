@@ -112,6 +112,14 @@ def choose():
     query = "SELECT * from " + part + "s;"
     result = cur.execute(query)
     parts_list = result.fetchall()
+    parts = []
+    for x in parts_list:
+        print(x)
+#        parts.append("<li>")
+        for entry in x:
+            print(entry)
+
+            parts.append(entry)
     return render_template("choose.html", parts=parts_list)
 
 @app.route('/404')
