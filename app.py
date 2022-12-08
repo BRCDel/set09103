@@ -117,10 +117,8 @@ def choose():
         print(x)
 #        parts.append("<li>")
         for i in (1, len(x)):
-#fleet pls I made changes
             print(x[i])
-
-            parts.append(entry)
+#            parts.append(entry)
     return render_template("choose.html", parts=parts_list)
 
 @app.route('/404')
