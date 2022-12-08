@@ -10,6 +10,7 @@ li a{
     display:flex;
     align-items:left;
     justify-content:space-between;
+    flex-basis:10%;
 }
 #attributes{
     float:left;
