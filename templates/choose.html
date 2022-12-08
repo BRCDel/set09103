@@ -17,7 +17,7 @@
         <li>
             {% for value in item %}
                 {{ value }}
-            {% endfor %} <button class=selectPart>Select</button>
+            {% endfor %} <button itemId={{ item[0] }} class=selectPart>Select</button>
         </li>
         {% endfor %}
     </ul>
