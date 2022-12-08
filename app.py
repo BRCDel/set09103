@@ -96,10 +96,10 @@ def builder():
         "pc_case" : session.get('pc_case')
     }
     #If we're returning here from the Choose page, find the item type and id and throw it into the Session data
-    itemToAddType = request.args.get('type')
-    itemToAddId = request.args.get('itemId')
-    if itemToAddId is not None:
-        print(type)
+#    itemToAddType = request.args.get('type')
+#    itemToAddId = request.args.get('itemId')
+#    if itemToAddId is not None:
+#        print(type)
 #        session[type] = itemId
     print(session['id'])
     for x in userlist:
@@ -107,6 +107,7 @@ def builder():
             continue
         if userlist[x] is not None:
             query = "SELECT part_name FROM " + x + "s WHERE id = " + str(userlist[x]) + ";"
+            print(query)
             result = cur.execute(query)
             userlist[x] = result.fetchone()[0]
     return render_template("builder.html", userlist=userlist)
