@@ -1,3 +1,9 @@
 li a{
     padding: 0px;
 }
+#parts_found{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-around;
+}
