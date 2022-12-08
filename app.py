@@ -140,7 +140,7 @@ def choose():
     #E I G H T   I F   S T A T E M E N T S
     if type=="cpu":
         descriptors = ["Cores", "Threads", "Base Clock", "Boost Clock", "Hyperthreading", "Wattage", "Price"]
-    return render_template("choose.html", type=type, parts=parts_list)
+    return render_template("choose.html", type=type, parts=parts_list, descriptors=descriptors)
 
 @app.route('/clear')
 def clear():
