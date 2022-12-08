@@ -13,6 +13,12 @@
     </ul>
     <p>Compatible parts</p>
     <ul>
-        {{ parts|safe }}
+        {% for item in parts %}
+        <li>
+            {% for attribute in item %}
+                {{ item.attribute }}
+            {& endfor &}
+        </li>
+        {% endfor %}
     </ul>
 </body>
