@@ -127,8 +127,7 @@ def choose():
 
 @app.route('/clear')
 def clear():
-    for value in session:
-        session.pop(value)
+    session.clear()
     return redirect(url_for('builder'))
 
 @app.route('/404')
