@@ -11,9 +11,6 @@
         <li><a href="/">Home</a></li>
         <li><a href="/builder">Build</a></li>
     </ul>
-    <ul id="actionbar">
-        <a href="/clear">Clear list</a>
-    </ul>
     <p>Parts list</p>
     <ul>
         <li>CPU: {{ userlist.cpu }} <a href="/choose?part=cpu"> Choose</a></li>
@@ -24,6 +21,9 @@
         <li>PSU: {{ userlist.psu }} <a href="/choose?part=psu"> Choose</a></li>
         <li>Cooler: {{ userlist.cooler }} <a href="/choose?part=cooler"> Choose</a></li>
         <li>Case: {{ userlist.pc_case }} <a href="/choose?part=pc_case"> Choose</a></li>
+    </ul>
+    <ul id="actionbar">
+        <a href="/clear">Clear list</a>
     </ul>
 </body>
 </html>
