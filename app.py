@@ -16,8 +16,6 @@ def connect_db():
 
 def init(app):
     config = configparser.ConfigParser()
-
-
     try:
         config_location = 'etc/defaults.cfg'
         config.read(config_location)
@@ -79,10 +77,14 @@ def builder():
     db = connect_db()
     db.row_factory = sqlite3.Row
     cur = db.cursor()
+    #find latest list ID number
+    if session['id'] is None
+        id = cur.execute("SELECT MAX(id) FROM lists;")
+        session['id'] = (id + 1)
     #placeholder list
     userlist = {
-        "id" : 10,
-        "username" : "brcdel",
+        "id" : session['id'],
+        "username" : "sample_user",
         "cpu" : 3,
         "mobo" : 3,
         "ram_kit" : 2,
@@ -92,6 +94,7 @@ def builder():
         "cooler" : 3,
         "pc_case" : 3
     }
+    print(session['id'])
     for x in userlist:
         if x == "id" or x == "username":
             continue
