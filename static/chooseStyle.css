@@ -4,6 +4,7 @@ li a{
 #parts_found{
     display:flex;
     align-items:left;
+    justify-content:space-between;
 }
 #attributes{
     float:left;
