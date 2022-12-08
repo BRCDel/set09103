@@ -10,7 +10,7 @@ html{
 * a{
     color:#E0E2DB;
 }
-#navbar {
+#navbar ul{
     list-style-type: none;
     margin:0;
     padding: 4px;
