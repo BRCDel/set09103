@@ -21,6 +21,9 @@ li a{
     flex-shrink:0;
     align-items:center
 }
+#attributes #itemIdPar{
+    flex-basis: 2%;
+}
 #select_part{
     padding-top:15px;
 }
