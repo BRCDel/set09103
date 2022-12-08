@@ -99,7 +99,7 @@ def builder():
     itemToAddType = request.args.get('type')
     itemToAddId = request.args.get('itemId')
     if itemToAddId is not None:
-#        print(itemToAddType)
+        print(itemToAddType)
         userlist[itemToAddType] = itemToAddId
 
     print(session['id'])
@@ -109,8 +109,8 @@ def builder():
         if userlist[x] is not None:
             query = "SELECT part_name FROM " + x + "s WHERE id = " + str(userlist[x]) + ";"
             print(query)
-#            result = cur.execute(query)
-#            userlist[x] = result.fetchone()[0]
+            result = cur.execute(query)
+            userlist[x] = result.fetchone()[0]
     return render_template("builder.html", userlist=userlist)
 
 @app.route('/choose')
