@@ -17,7 +17,7 @@
         <li id=parts_found>
             {% for value in item %}
                 {{ value }}
-            {% endfor %} <a href="/builder?type={{type}}&itemId={{item[0]}}" class=selectPart>Select</a>
+            {% endfor %} <a href="/builder?type={{type}}&itemId={{item[0]}}" id=select_part>Select</a>
         </li>
         {% endfor %}
     </ul>

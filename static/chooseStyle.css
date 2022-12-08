@@ -7,3 +7,6 @@ li a{
     align-items:center;
     justify-content:space-around;
 }
+#select_part{
+    float:left;
+}
