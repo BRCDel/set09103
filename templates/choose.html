@@ -15,9 +15,7 @@
     <ul>
         {% for item in parts %}
         <li>
-            {% for attribute in item %}
-                {{ item.attribute }}
-            {% endfor %}
+            {{ item }}
         </li>
         {% endfor %}
     </ul>
