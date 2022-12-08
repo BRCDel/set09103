@@ -15,7 +15,9 @@
     <ul>
         {% for item in parts %}
         <li>
-            {{ item }}
+            {% for value in item %}
+                {{ value }}
+            {% endfor %}
         </li>
         {% endfor %}
     </ul>
