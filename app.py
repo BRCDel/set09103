@@ -100,7 +100,7 @@ def builder():
     itemToAddId = request.args.get('itemId')
     if itemToAddId is not None:
 #        print(itemToAddType)
-        session[itemToAddType] = itemId
+        session[itemToAddType] = itemToAddId
     print(session['id'])
     for x in userlist:
         if x == "id" or x == "username":
