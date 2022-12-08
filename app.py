@@ -78,11 +78,11 @@ def builder():
     db.row_factory = sqlite3.Row
     cur = db.cursor()
 
-    #find latest list ID number
+    #find latest list ID number, increment by 1, make that our list ID
     if session.get('id') is None:
         id = cur.execute("SELECT MAX(id) FROM lists;").fetchone()[0]
         session['id'] = (id + 1)
-    #placeholder list
+    #Kinda sorta need this I think
     userlist = {
         "id" : session.get('id'),
         "username" : "sample_user",
@@ -100,9 +100,10 @@ def builder():
     itemToAddId = request.args.get('itemId')
     if itemToAddId is not None:
         print(itemToAddType)
+        #Janky Chan fix, but: Add the changed id to both the userlist we're passing to the page and the actual session to persist
         userlist[itemToAddType] = itemToAddId
         session[itemToAddType] = itemToAddId
-    print(session['id'])
+
     for x in userlist:
         if x == "id" or x == "username":
             continue
@@ -111,6 +112,7 @@ def builder():
             print(query)
             result = cur.execute(query)
             userlist[x] = result.fetchone()[0]
+
     return render_template("builder.html", userlist=userlist)
 
 @app.route('/choose')
