@@ -85,14 +85,14 @@ def builder():
     userlist = {
         "id" : session['id'],
         "username" : "sample_user",
-        "cpu" : 3,
-        "mobo" : 3,
-        "ram_kit" : 2,
-        "gpu" : 3,
-        "drive" : 3,
-        "psu" : 3,
-        "cooler" : 3,
-        "pc_case" : 3
+        "cpu" : session.get('cpu'),
+        "mobo" : session.get('mobo'),
+        "ram_kit" : session.get('ram_kit'),
+        "gpu" : session.get('gpu'),
+        "drive" : session.get('drive'),
+        "psu" : session.get('psu'),
+        "cooler" : session.get('cooler'),
+        "pc_case" : session.get('pc_case')
     }
     print(session['id'])
     for x in userlist:
