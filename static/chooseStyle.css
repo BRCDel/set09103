@@ -6,7 +6,8 @@ li a{
     flex-direction: column;
     align-items:center;
     justify-content:space-around;
+    float:left;
 }
 #select_part{
-    float:left;
+    
 }
