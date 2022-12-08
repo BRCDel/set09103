@@ -15,14 +15,14 @@
     <ul>
         <li id=descriptor><p id=itemIdPar>ID</p><p>Name</p>{% for desc in descriptors[type] %} <p>{{ desc }}</p> {% endfor %}<p>Price</p><p> </p></li>
         {% for item in parts %}
-            {% if item == 'id' %}
-                <li id=parts_found id=idColumn>
-            {% else %}
-                <li id=parts_found>
-            {% endif %}    
-                {% for value in item %}
+            <li id=parts_found>
+            {% for value in item %}
+                {% if value == 'id' %}
+                    <p id=attributes class=idColumn>{{ value }}</p>
+                {% else %}
                     <p id=attributes>{{ value }}</p>
-                {% endfor %} <a href="/builder?type={{type}}&itemId={{item[0]}}" id=select_part>Select</a>
+                {% endif %}
+            {% endfor %} <a href="/builder?type={{type}}&itemId={{item[0]}}" id=select_part>Select</a>
             </li>
         {% endfor %}
     </ul>
