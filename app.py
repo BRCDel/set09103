@@ -77,6 +77,7 @@ def builder():
     db = connect_db()
     db.row_factory = sqlite3.Row
     cur = db.cursor()
+
     #find latest list ID number
     if session.get('id') is None:
         id = cur.execute("SELECT MAX(id) FROM lists;").fetchone()[0]
@@ -94,6 +95,11 @@ def builder():
         "cooler" : session.get('cooler'),
         "pc_case" : session.get('pc_case')
     }
+    #If we're returning here from the Choose page, find the item type and id and throw it into the Session data
+    type = request.args.get('type')
+    itemId = request.args.get('itemId')
+    if itemId is not None:
+        session[type] = itemId
     print(session['id'])
     for x in userlist:
         if x == "id" or x == "username":
@@ -106,13 +112,13 @@ def builder():
 
 @app.route('/choose')
 def choose():
-    part = request.args.get('part')
+    type = request.args.get('part')
     db = connect_db()
     cur = db.cursor()
-    query = "SELECT * from " + part + "s;"
+    query = "SELECT * from " + type + "s;"
     result = cur.execute(query)
     parts_list = result.fetchall()
-    return render_template("choose.html", parts=parts_list)
+    return render_template("choose.html", type=type, parts=parts_list)
 
 @app.route('/404')
 def force404():
