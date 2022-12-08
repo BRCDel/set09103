@@ -108,7 +108,6 @@ def builder():
 def choose():
     part = request.args.get('part')
     db = connect_db()
-    db.row_factory = sqlite3.Row
     cur = db.cursor()
     query = "SELECT * from " + part + "s;"
     result = cur.execute(query)
