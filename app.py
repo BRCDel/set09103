@@ -125,6 +125,11 @@ def choose():
     parts_list = result.fetchall()
     return render_template("choose.html", type=type, parts=parts_list)
 
+@app.route('/clear')
+def clear():
+    session.clear()
+    return redirect(url_for('builder'))
+
 @app.route('/404')
 def force404():
     abort(404)
