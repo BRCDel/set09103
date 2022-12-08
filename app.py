@@ -116,7 +116,7 @@ def choose():
     for x in parts_list:
         string_to_build = "<li>"
         for i in range(1, len(x)-1):
-            string_to_build += x[i]
+            string_to_build += str(x[i])
         string_to_build += "</li>"
         parts.append(string_to_build)
     return render_template("choose.html", parts=parts)
