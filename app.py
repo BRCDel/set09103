@@ -98,12 +98,13 @@ def builder():
     for x in userlist:
         print(type(x))
         print(x)
+        print(userlist[x])
         if x == "id" or x == "username":
             continue
-        if userlist[x] != "None":
-            query = "SELECT part_name FROM " + x + "s WHERE id = " + str(userlist[x]) + ";"
-            result = cur.execute(query)
-            userlist[x] = result.fetchone()[0]
+#        if userlist[x] != "None":
+#            query = "SELECT part_name FROM " + x + "s WHERE id = " + str(userlist[x]) + ";"
+#            result = cur.execute(query)
+#            userlist[x] = result.fetchone()[0]
     return render_template("builder.html", userlist=userlist)
 
 @app.route('/choose')
