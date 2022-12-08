@@ -4,7 +4,7 @@ li a{
 #parts_found{
     display:flex;
     flex-direction: column;
-    align-items:center;
+    align-items:left;
     justify-content:space-around;
 }
 #select_part{
