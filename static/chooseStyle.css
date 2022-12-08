@@ -6,6 +6,11 @@ li a{
     align-items:left;
     justify-content:space-between;
 }
+#descriptor{
+    display:flex;
+    align-items:left;
+    justify-content:space-between;
+}
 #attributes{
     float:left;
     display:flex;
