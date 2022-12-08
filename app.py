@@ -116,8 +116,8 @@ def choose():
     for x in parts_list:
         print(x)
 #        parts.append("<li>")
-        for entry in x:
-            print(entry)
+        for i in (1, len(x)):
+            print(x[i])
 
             parts.append(entry)
     return render_template("choose.html", parts=parts_list)
