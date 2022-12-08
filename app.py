@@ -113,7 +113,7 @@ def choose():
     query = "SELECT * from " + part + "s;"
     result = cur.execute(query)
     parts_list = result.fetchall()
-    return render_template("choose.html", parts_list)
+    return render_template("choose.html", parts=parts_list)
 
 @app.route('/404')
 def force404():
