@@ -114,11 +114,10 @@ def choose():
     parts_list = result.fetchall()
     parts = []
     for x in parts_list:
-        print(x)
         parts.append("<li>")
         for i in range(1, len(x)-1):
             parts.append(x[i])
-    return render_template("choose.html", parts=parts_list)
+    return render_template("choose.html", parts=parts)
 
 @app.route('/404')
 def force404():
