@@ -2,46 +2,59 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Del's PC Builder</title>
-	<link rel="stylesheet" href="style.css" type="text/css/">
+	<link rel="stylesheet" href="../static/coreStyle.css" type="text/css">
+    <link rel="stylesheet" href="../static/indexStyle.css" type="text/css">
 </head>
 <body>
 	<ul id="navbar">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="builder.html">Build</a></li>
-		<li><a href="lists.html">Lists</a></li>
+		<li><a href="/">Home</a></li>
+		<li><a href="/builder">Build</a></li>
 	</ul>
 	<div id="recents">
 		<p id="recents_title">Recently added lists</p>
-		<!--this'll probably be replaced by template placeholders-->
 		<ul>
-			<li>CPU</li>
-			<li>MOBO</li>
-			<li>RAM</li>
-			<li>GPU</li>
-			<li>Case</li>
-			<li>PSU</li>
+            <li>Made by {{ lists[1].username }}</li>
+			<li>{{ lists[1].cpu }}</li>
+			<li>{{ lists[1].mobo }}</li>
+			<li>{{ lists[1].ram_kit }}</li>
+			<li>{{ lists[1].gpu }}</li>
+			<li>{{ lists[1].pc_case }}</li>
+            <li>{{ lists[1].cooler }}</li>
+			<li>{{ lists[1].psu }}</li>
 		</ul>
 		<ul>
-			<li>item</li>
+            <li> Made by {{ lists[2].username }}</li>
+            <li>{{ lists[2].cpu }}</li>
+            <li>{{ lists[2].mobo }}</li>
+            <li>{{ lists[2].ram_kit }}</li>
+            <li>{{ lists[2].gpu }}</li>
+            <li>{{ lists[2].pc_case }}</li>
+            <li>{{ lists[2].cooler }}</li>
+            <li>{{ lists[2].psu }}</li>
 		</ul>
 		<ul>
-			<li>item2</li>
-		</ul>
-		<ul>
-			<li>item3</li>
+        <li> Made by {{ lists[3].username }}</li>
+            <li>{{ lists[3].cpu }}</li>
+            <li>{{ lists[3].mobo }}</li>
+            <li>{{ lists[3].ram_kit }}</li>
+            <li>{{ lists[3].gpu }}</li>
+            <li>{{ lists[3].pc_case }}</li>
+            <li>{{ lists[3].cooler }}</li>
+            <li>{{ lists[3].psu }}</li>
 		</ul>
 		
 	</div>
 	<div id="featured">
 		<p>Today's featured list</p>
-		<!--more template placeholders soontm-->
 		<ul>
-			<li>CPU</li>
-			<li>MOBO</li>
-			<li>RAM</li>
-			<li>GPU</li>
-			<li>Case</li>
-			<li>PSU</li>
+            <li> Made by {{ lists[0].username }}</li>
+            <li>{{ lists[0].cpu }}</li>
+            <li>{{ lists[0].mobo }}</li>
+            <li>{{ lists[0].ram_kit }}</li>
+            <li>{{ lists[0].gpu }}</li>
+            <li>{{ lists[0].pc_case }}</li>
+            <li>{{ lists[0].cooler }}</li>
+            <li>{{ lists[0].psu }}</li>
 		</ul>
 	</div>
 </body>

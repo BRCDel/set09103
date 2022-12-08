@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Del's PC Builder</title>
+    <link rel="stylesheet" href="../static/coreStyle.css" type="text/css">
+    <link rel="stylesheet" href="../static/chooseStyle.css" type="text/css">
+</head>
+<body>
+    <ul id="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/builder">Build</a></li>
+    </ul>
+    <p>Compatible parts</p>
+    <ul>
+        {% for item in parts %}
+        <li>
+            {% for value in item %}
+                {{ value }}
+            {% endfor %} <a href="/builder?type={{type}}&itemId={{item[0]}}" class=selectPart>Select</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>

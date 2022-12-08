@@ -1,0 +1,27 @@
+html{
+    font-family:"Verdana", sans-serif;
+}
+* {
+    background-color: #2F4F4F;
+}
+* p{
+    color: lightgray;
+}
+* a{
+    color:lightgray;
+}
+#navbar {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+li{
+    color: lightgray;
+}
+#navbar li{
+    display:inline;
+}
+li a{
+    padding: 8px;
+}
+
