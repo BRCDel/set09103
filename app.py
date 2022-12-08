@@ -106,7 +106,11 @@ def builder():
 
 @app.route('/choose')
 def choose():
-    return render_template("choose.html")
+    part = request.args.get('part')
+    query = "SELECT * from " + part + "s;"
+    result = cur.execute(query)
+    parts_list = result.fetchall()
+    return render_template("choose.html", parts_list)
 
 @app.route('/404')
 def force404():
