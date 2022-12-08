@@ -84,7 +84,7 @@ def builder():
         session['id'] = (id + 1)
     #placeholder list
     userlist = {
-        "id" : session['id'],
+        "id" : session.get('id'),
         "username" : "sample_user",
         "cpu" : session.get('cpu'),
         "mobo" : session.get('mobo'),
@@ -96,9 +96,9 @@ def builder():
         "pc_case" : session.get('pc_case')
     }
     #If we're returning here from the Choose page, find the item type and id and throw it into the Session data
-    type = request.args.get('type')
-    itemId = request.args.get('itemId')
-    if itemId is not None:
+    itemToAddType = request.args.get('type')
+    itemToAddId = request.args.get('itemId')
+    if itemToAddId is not None:
         print(type)
 #        session[type] = itemId
     print(session['id'])
