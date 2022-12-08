@@ -123,6 +123,23 @@ def choose():
     query = "SELECT * from " + type + "s;"
     result = cur.execute(query)
     parts_list = result.fetchall()
+    #We kinda need this dictionary here for the row descriptors.
+    #Ideally this would be dynamic, in the DB or something, but this is the quicker way to do it.
+    #Might improve in a future update.
+    descriptors = {
+        "cpu" : ["Cores", "Threads", "Base Clock", "Boost Clock", "Hyperthreading", "Wattage"],
+        "mobo" : ["RAM Type", "RAM Slots", "Chipset", "Socket", "Form Factor"],
+        "ram_kit" : ["Capacity", "Speed", "CAS Latency", "DIMMs"],
+        "gpu" : ["Cores", "Base Clock", "Boost Clock", "Mem Clock", "VRAM", "Wattage"],
+        "drive" : ["Capacity", "Interface", "Type"],
+        "psu" : ["Wattage", "Modularity", "Efficiency", "Length"],
+        "cooler" : ["Wattage", "Fans", "Air/Liquid"],
+        "pc_case" : ["Incl. Fans", "Max Fans", "Mobo support", "PSU support", "Cooler height", "Dimensions", "Side Panel"],
+    }
+    #Fuck it, biting the bullet.
+    #E I G H T   I F   S T A T E M E N T S
+    if type=="cpu":
+        descriptors = ["Cores", "Threads", "Base Clock", "Boost Clock", "Hyperthreading", "Wattage", "Price"]
     return render_template("choose.html", type=type, parts=parts_list)
 
 @app.route('/clear')
