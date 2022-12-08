@@ -117,6 +117,7 @@ def choose():
         print(x)
 #        parts.append("<li>")
         for i in (1, len(x)):
+#fleet pls I made changes
             print(x[i])
 
             parts.append(entry)
