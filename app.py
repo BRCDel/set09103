@@ -78,7 +78,7 @@ def builder():
     db.row_factory = sqlite3.Row
     cur = db.cursor()
     #find latest list ID number
-    if session['id'] is None
+    if session['id'] is None:
         id = cur.execute("SELECT MAX(id) FROM lists;")
         session['id'] = (id + 1)
     #placeholder list
