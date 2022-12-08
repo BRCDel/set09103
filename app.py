@@ -108,7 +108,7 @@ def builder():
         if userlist[x] is not None:
             query = "SELECT part_name FROM " + x + "s WHERE id = " + str(userlist[x]) + ";"
             print(query)
-            result = cur.execute(query)
+#            result = cur.execute(query)
             userlist[x] = result.fetchone()[0]
     return render_template("builder.html", userlist=userlist)
 
