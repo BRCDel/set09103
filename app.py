@@ -79,7 +79,7 @@ def builder():
     cur = db.cursor()
     #find latest list ID number
     if session.get('id') is None:
-        id = cur.execute("SELECT MAX(id) FROM lists;")
+        id = cur.execute("SELECT MAX(id) FROM lists;").fetchone()[0]
         session['id'] = (id + 1)
     #placeholder list
     userlist = {
