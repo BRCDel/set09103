@@ -24,7 +24,7 @@
 	align-items:center;
 	flex-wrap:wrap;
     flex-grow:1;
-    background-color:gray;
+    background-color:#C09BD8;
     flex-basis:auto;
 	justify-content:space-around;
     color: gray;
@@ -35,8 +35,12 @@
 	font-weight:bold;
 	flex-wrap:wrap;
 	overflow-wrap:break-word;
+    background-color:#C09BD8
 }
 #featured ul{
 	display:inline;
 	font-size:24px;
+}
+#featured li{
+    background-color:C09BD8;
 }
