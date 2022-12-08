@@ -13,13 +13,14 @@ html{
 #navbar ul{
     list-style-type: none;
     margin:0;
-    padding: 4px;
+    padding: 8px;
 }
 li{
     color: #E0E2DB;
 }
 #navbar li{
     display:inline;
+    padding:8px
 }
 li a{
     padding: 8px;
