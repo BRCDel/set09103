@@ -4,3 +4,6 @@ li a{
 p{
     font-size:24px;
 }
+#actionbar a{
+    padding: 8px;
+}
