@@ -112,13 +112,7 @@ def choose():
     query = "SELECT * from " + part + "s;"
     result = cur.execute(query)
     parts_list = result.fetchall()
-    parts = []
-    for x in parts_list:
-        string_to_build=""
-        for i in range(1, len(x)-1):
-            string_to_build += str(x[i]) + " "
-        parts.append(string_to_build)
-    return render_template("choose.html", parts=parts)
+    return render_template("choose.html", parts=parts_list)
 
 @app.route('/404')
 def force404():
