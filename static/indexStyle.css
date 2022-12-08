@@ -17,6 +17,7 @@
 	font-size:24px;
 }
 #featured{
+    border-radius:25px;
 	display:flex;
     width:85%;
     margin:auto;
