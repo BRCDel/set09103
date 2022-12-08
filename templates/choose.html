@@ -13,7 +13,7 @@
     </ul>
     <p>Compatible parts</p>
     <ul>
-        <li id=descriptor><p>ID</p><p>Name</p>{% for desc in descriptors[type] %} <p>{{ desc }}</p> {% endfor %}<p>Price</p></li>
+        <li id=descriptor><p>ID</p><p>Name</p>{% for desc in descriptors[type] %} <p>{{ desc }}</p> {% endfor %}<p>Price</p><p> </p></li>
         {% for item in parts %}
         <li id=parts_found>
             {% for value in item %}
