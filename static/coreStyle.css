@@ -13,7 +13,7 @@ html{
 #navbar {
     list-style-type: none;
     margin:0;
-    padding: 0;
+    padding: 4px;
 }
 li{
     color: #E0E2DB;
