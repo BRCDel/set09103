@@ -96,6 +96,7 @@ def builder():
     }
     print(session['id'])
     for x in userlist:
+        print(type(x))
         if x == "id" or x == "username":
             continue
 #        if x is not None:
