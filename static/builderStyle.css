@@ -10,4 +10,6 @@ p{
 #actionbar a{
     padding:8px;
     font-size:24px;
+    background-color:#9577A8;
+    border-radius:25px;
 }
