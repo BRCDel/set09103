@@ -100,7 +100,6 @@ CREATE TABLE pc_cases(
     included_fans text,
     compatible_fans text,
     mobo_type text,
-    psu_type text,
     cooler_height text,
     dimensions text,
     side_panel text,

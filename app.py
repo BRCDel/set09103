@@ -134,7 +134,7 @@ def choose():
         "drive" : ["Capacity", "Interface", "Type"],
         "psu" : ["Wattage", "Modularity", "Efficiency", "Length"],
         "cooler" : ["Wattage", "Fans", "Air/Liquid"],
-        "pc_case" : ["Incl. Fans", "Max Fans", "Mobo support", "PSU support", "Cooler height", "Dimensions", "Side Panel"],
+        "pc_case" : ["Incl. Fans", "Max Fans", "Mobo support", "Cooler height", "Dimensions", "Side Panel"],
     }
     return render_template("choose.html", type=type, parts=parts_list, descriptors=descriptors)
 
