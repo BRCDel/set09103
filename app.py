@@ -143,6 +143,18 @@ def clear():
     session.clear()
     return redirect(url_for('builder'))
 
+@app.route('/publish')
+def publish():
+    db = connect_db()
+    cur = db.cursor()
+    query = "INSERT INTO lists  VALUES(" + \
+        session.get('id') + "," + session.get('username') + "," + session.get('cpu') + "," + session.get('mobo') + "," + \
+        session.get('ram_kit') + "," + session.get('gpu') + "," + session.get('drive') + "," + session.get('psu') + "," + \
+        session.get('cooler') + "," + session.get('pc_case') + ");"
+    cur.execute(query)
+
+    return redirect(url_for('home'))
+
 @app.route('/404')
 def force404():
     abort(404)
