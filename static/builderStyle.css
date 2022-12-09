@@ -9,9 +9,20 @@ p{
 }
 #actionbar a{
     padding:12px;
-    margin-left:-22px;
+    margin-left:-5px;
     font-size:24px;
     background-color:#9577A8;
     border-radius:25px;
     text-decoration:none;
+}
+.select_button{
+    padding:12px;
+    margin-left:-5px;
+    font-size:24px;
+    background-color:#9577A8;
+    border-radius:25px;
+    text-decoration:none;
+}
+.offset{
+    height:15px;
 }
