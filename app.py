@@ -147,10 +147,11 @@ def clear():
 def publish():
     db = connect_db()
     cur = db.cursor()
+    #Yes I know I can do this better by just passing the entire list
     query = "INSERT INTO lists  VALUES(" + \
-        session.get('id') + "," + session.get('username') + "," + session.get('cpu') + "," + session.get('mobo') + "," + \
-        session.get('ram_kit') + "," + session.get('gpu') + "," + session.get('drive') + "," + session.get('psu') + "," + \
-        session.get('cooler') + "," + session.get('pc_case') + ");"
+        str(session.get('id')) + "," + session.get('username') + "," + str(session.get('cpu')) + "," + str(session.get('mobo')) + "," + \
+        str(session.get('ram_kit')) + "," + str(session.get('gpu')) + "," + str(session.get('drive')) + "," + str(session.get('psu')) + "," + \
+        str(session.get('cooler')) + "," + str(session.get('pc_case')) + ");"
     cur.execute(query)
 
     return redirect(url_for('home'))
