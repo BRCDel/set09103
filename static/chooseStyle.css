@@ -6,7 +6,7 @@ li a{
     align-items:left;
     justify-content:space-between;
 }
-#descriptor{
+.descriptor{
     display:flex;
     justify-content:space-between;
     min-width:10%;
