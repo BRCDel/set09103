@@ -18,9 +18,9 @@ li a{
     flex-basis: 6%;
 }
 .select_part{
-    padding-top:15px;
-    padding:12px;
+    padding:10px;
     margin-left:-22px;
+    margin-top:1px;
     font-size:24px;
     background-color:#9577A8;
     border-radius:25px;
