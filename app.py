@@ -82,10 +82,11 @@ def builder():
     if session.get('id') is None:
         id = cur.execute("SELECT MAX(id) FROM lists;").fetchone()[0]
         session['id'] = (id + 1)
+        session['username'] = "sample_user"
     #Kinda sorta need this I think
     userlist = {
         "id" : session.get('id'),
-        "username" : "sample_user",
+        "username" : session.get('username'),
         "cpu" : session.get('cpu'),
         "mobo" : session.get('mobo'),
         "ram_kit" : session.get('ram_kit'),
@@ -123,11 +124,25 @@ def choose():
     query = "SELECT * from " + type + "s;"
     result = cur.execute(query)
     parts_list = result.fetchall()
-    return render_template("choose.html", type=type, parts=parts_list)
+    #We kinda need this dictionary here for the row descriptors.
+    #Ideally this would be dynamic, in the DB or something, but this is the quicker way to do it.
+    #Might improve in a future update.
+    descriptors = {
+        "cpu" : ["Cores", "Threads", "Base Clock", "Boost Clock", "Hyperthreading", "Wattage"],
+        "mobo" : ["RAM Type", "RAM Slots", "Chipset", "Socket", "Form Factor"],
+        "ram_kit" : ["Capacity", "Speed", "CAS Latency", "DIMMs"],
+        "gpu" : ["Cores", "Base Clock", "Boost Clock", "Mem Clock", "VRAM", "Wattage"],
+        "drive" : ["Capacity", "Interface", "Type"],
+        "psu" : ["Wattage", "Modularity", "Efficiency", "Length"],
+        "cooler" : ["Wattage", "Fans", "Air/Liquid"],
+        "pc_case" : ["Incl. Fans", "Max Fans", "Mobo support", "Cooler height", "Dimensions", "Side Panel"],
+    }
+    return render_template("choose.html", type=type, parts=parts_list, descriptors=descriptors)
 
 @app.route('/clear')
 def clear():
     session.clear()
+    session['username'] = "sample_user"
     return redirect(url_for('builder'))
 
 @app.route('/404')

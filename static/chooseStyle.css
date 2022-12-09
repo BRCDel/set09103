@@ -1,3 +1,31 @@
 li a{
     padding: 0px;
 }
+#parts_found{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.descriptor{
+    display:flex;
+    justify-content:space-between;
+}
+.attributes{
+    min-width:10%;
+    max-width:10%;
+}
+#idColumn{
+    flex-basis: 6%;
+}
+.select_part{
+    padding:10px;
+    margin-left:-22px;
+    margin-top:1px;
+    font-size:24px;
+    background-color:#9577A8;
+    border-radius:25px;
+    text-decoration:none;
+}
+.top_buffer{
+    padding:17px;
+}

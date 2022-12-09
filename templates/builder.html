@@ -11,19 +11,20 @@
         <li><a href="/">Home</a></li>
         <li><a href="/builder">Build</a></li>
     </ul>
+    <p>Your parts list</p>
+    <ul class=components>
+        <li class=component><p>CPU: {{ userlist.cpu }}</p> <a class=select_button href="/choose?part=cpu"> Choose</a></li>
+        <li class=component><p>Mobo: {{ userlist.mobo }}</p> <a class=select_button href="/choose?part=mobo"> Choose</a></li>
+        <li class=component><p>RAM: {{ userlist.ram_kit }}</p> <a class=select_button href="/choose?part=ram_kit"> Choose</a></li>
+        <li class=component><p>GPU: {{ userlist.gpu }}</p> <a class=select_button href="/choose?part=gpu"> Choose</a></li>
+        <li class=component><p>Storage: {{ userlist.drive }}</p> <a class=select_button href="/choose?part=drive"> Choose</a></li>
+        <li class=component><p>PSU: {{ userlist.psu }}</p> <a class=select_button href="/choose?part=psu"> Choose</a></li>
+        <li class=component><p>Cooler: {{ userlist.cooler }}</p> <a class=select_button href="/choose?part=cooler"> Choose</a></li>
+        <li class=component><p>Case: {{ userlist.pc_case }}</p> <a class=select_button href="/choose?part=pc_case"> Choose</a></li>
+    </ul>
+    <p class=offset> </p>
     <ul id="actionbar">
         <a href="/clear">Clear list</a>
-    </ul>
-    <p>Parts list</p>
-    <ul>
-        <li>CPU: {{ userlist.cpu }} <a href="/choose?part=cpu"> Choose</a></li>
-        <li>Mobo: {{ userlist.mobo }} <a href="/choose?part=mobo"> Choose</a></li>
-        <li>RAM: {{ userlist.ram_kit }} <a href="/choose?part=ram_kit"> Choose</a></li>
-        <li>GPU: {{ userlist.gpu }} <a href="/choose?part=gpu"> Choose</a></li>
-        <li>Storage: {{ userlist.drive }} <a href="/choose?part=drive"> Choose</a></li>
-        <li>PSU: {{ userlist.psu }} <a href="/choose?part=psu"> Choose</a></li>
-        <li>Cooler: {{ userlist.cooler }} <a href="/choose?part=cooler"> Choose</a></li>
-        <li>Case: {{ userlist.pc_case }} <a href="/choose?part=pc_case"> Choose</a></li>
     </ul>
 </body>
 </html>

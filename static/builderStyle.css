@@ -1,3 +1,31 @@
 li a{
     padding: 0px;
 }
+.component{
+    font-size:24px;
+    list-style-type: none;
+}
+p{
+    font-size:24px;
+}
+#actionbar{
+    margin-left:-5px;
+}
+#actionbar a{
+    padding:12px;
+    font-size:24px;
+    background-color:#9577A8;
+    border-radius:25px;
+    text-decoration:none;
+}
+.select_button{
+    padding:12px;
+    margin-left:-5px;
+    font-size:24px;
+    background-color:#9577A8;
+    border-radius:25px;
+    text-decoration:none;
+}
+.offset{
+    height:10px;
+}

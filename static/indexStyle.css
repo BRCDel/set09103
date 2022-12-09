@@ -17,14 +17,15 @@
 	font-size:24px;
 }
 #featured{
+    border-radius:25px;
 	display:flex;
-    width:70%;
+    width:85%;
     margin:auto;
 	flex-direction:row-reverse;
 	align-items:center;
 	flex-wrap:wrap;
     flex-grow:1;
-    background-color:gray;
+    background-color:#9577A8;
     flex-basis:auto;
 	justify-content:space-around;
     color: gray;
@@ -35,8 +36,13 @@
 	font-weight:bold;
 	flex-wrap:wrap;
 	overflow-wrap:break-word;
+    background-color:#9577A8;
 }
 #featured ul{
 	display:inline;
 	font-size:24px;
+    background-color:#9577A8;
+}
+#featured li{
+    background-color:#9577A8;
 }
