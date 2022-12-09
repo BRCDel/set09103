@@ -142,6 +142,7 @@ def choose():
 @app.route('/clear')
 def clear():
     session.clear()
+    session['username'] = "sample_user"
     return redirect(url_for('builder'))
 
 @app.route('/404')
