@@ -9,12 +9,12 @@ li a{
 #descriptor{
     display:flex;
     justify-content:space-between;
+    min-width:10%;
+    max-width:100%;
 }
 .attributes{
-    display:flex;
-    justify-content:flex-start;
-    flex-basis:10%;
-    flex-shrink:0;
+    min-width:10%;
+    max-width:10%;
 }
 #idColumn{
     flex-basis: 6%;
