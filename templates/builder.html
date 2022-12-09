@@ -13,14 +13,14 @@
     </ul>
     <p>Parts list</p>
     <ul class=components>
-        <li class=component><p>CPU: {{ userlist.cpu }}</p> <a href="/choose?part=cpu"> Choose</a></li>
-        <li class=component><p>Mobo: {{ userlist.mobo }}</p> <a href="/choose?part=mobo"> Choose</a></li>
-        <li class=component><p>RAM: {{ userlist.ram_kit }}</p> <a href="/choose?part=ram_kit"> Choose</a></li>
-        <li class=component><p>GPU: {{ userlist.gpu }}</p> <a href="/choose?part=gpu"> Choose</a></li>
-        <li class=component><p>Storage: {{ userlist.drive }}</p> <a href="/choose?part=drive"> Choose</a></li>
-        <li class=component><p>PSU: {{ userlist.psu }}</p> <a href="/choose?part=psu"> Choose</a></li>
-        <li class=component><p>Cooler: {{ userlist.cooler }}</p> <a href="/choose?part=cooler"> Choose</a></li>
-        <li class=component><p>Case: {{ userlist.pc_case }}</p> <a href="/choose?part=pc_case"> Choose</a></li>
+        <li class=component><p>CPU: {{ userlist.cpu }}</p> <a class=select_button href="/choose?part=cpu"> Choose</a></li>
+        <li class=component><p>Mobo: {{ userlist.mobo }}</p> <a class=select_button href="/choose?part=mobo"> Choose</a></li>
+        <li class=component><p>RAM: {{ userlist.ram_kit }}</p> <a class=select_button href="/choose?part=ram_kit"> Choose</a></li>
+        <li class=component><p>GPU: {{ userlist.gpu }}</p> <a class=select_button href="/choose?part=gpu"> Choose</a></li>
+        <li class=component><p>Storage: {{ userlist.drive }}</p> <a class=select_button href="/choose?part=drive"> Choose</a></li>
+        <li class=component><p>PSU: {{ userlist.psu }}</p> <a class=select_button href="/choose?part=psu"> Choose</a></li>
+        <li class=component><p>Cooler: {{ userlist.cooler }}</p> <a class=select_button href="/choose?part=cooler"> Choose</a></li>
+        <li class=component><p>Case: {{ userlist.pc_case }}</p> <a class=select_button href="/choose?part=pc_case"> Choose</a></li>
     </ul>
     <ul id="actionbar">
         <a href="/clear">Clear list</a>
