@@ -82,10 +82,11 @@ def builder():
     if session.get('id') is None:
         id = cur.execute("SELECT MAX(id) FROM lists;").fetchone()[0]
         session['id'] = (id + 1)
+        session['username'] = "sample_user"
     #Kinda sorta need this I think
     userlist = {
         "id" : session.get('id'),
-        "username" : "sample_user",
+        "username" : session.get('username'),
         "cpu" : session.get('cpu'),
         "mobo" : session.get('mobo'),
         "ram_kit" : session.get('ram_kit'),
@@ -149,7 +150,7 @@ def publish():
     cur = db.cursor()
     #Yes I know I can do this better by just passing the entire list
     query = "INSERT INTO lists  VALUES(" + \
-            str(session.get('id')) + "," + str(session.get('username')) + "," + str(session.get('cpu')) + "," + str(session.get('mobo')) + "," + \
+            str(session.get('id')) + "," + session.get('username') + "," + str(session.get('cpu')) + "," + str(session.get('mobo')) + "," + \
         str(session.get('ram_kit')) + "," + str(session.get('gpu')) + "," + str(session.get('drive')) + "," + str(session.get('psu')) + "," + \
         str(session.get('cooler')) + "," + str(session.get('pc_case')) + ");"
     cur.execute(query)
