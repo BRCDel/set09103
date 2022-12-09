@@ -8,8 +8,10 @@ p{
     font-size:24px;
 }
 #actionbar a{
-    padding:8px;
+    padding:12px;
+    margin-left:-22px;
     font-size:24px;
     background-color:#9577A8;
     border-radius:25px;
+    text-decoration:none;
 }
