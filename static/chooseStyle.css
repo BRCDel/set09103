@@ -13,7 +13,7 @@ li a{
     justify-content:space-between;
     flex-basis:10%;
 }
-#attributes{
+.attributes{
     display:flex;
     flex-direction:row;
     justify-content:flex-start;

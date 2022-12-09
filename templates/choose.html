@@ -17,12 +17,8 @@
         {% for item in parts %}
             <li id=parts_found>
             {% for value in item %}
-                {% if value == 'id' %}
-                    <p id=attributes class=idColumn>{{ value }}</p>
-                {% else %}
-                    <p id=attributes>{{ value }}</p>
-                {% endif %}
-            {% endfor %} <a href="/builder?type={{type}}&itemId={{item[0]}}" id=select_part>Select</a>
+                <p class=attributes>{{ value }}</p>
+            {% endfor %} <a href="/builder?type={{type}}&itemId={{item[0]}}" id=select_part class=attributes>Select</a>
             </li>
         {% endfor %}
     </ul>
