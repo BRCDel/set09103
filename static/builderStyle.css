@@ -1,9 +1,13 @@
 li a{
     padding: 0px;
 }
+.component{
+    font-size:24px;
+}
 p{
     font-size:24px;
 }
 #actionbar a{
-    padding: 8px;
+    padding:8px;
+    font-size:24px;
 }
