@@ -150,7 +150,7 @@ def publish():
     cur = db.cursor()
     #Yes I know I can do this better by just passing the entire list
     query = "INSERT INTO lists  VALUES(" + \
-            str(session.get('id')) + "," + session.get('username') + "," + str(session.get('cpu')) + "," + str(session.get('mobo')) + "," + \
+        str(session.get('id')) + "," + session.get('username') + "," + str(session.get('cpu')) + "," + str(session.get('mobo')) + "," + \
         str(session.get('ram_kit')) + "," + str(session.get('gpu')) + "," + str(session.get('drive')) + "," + str(session.get('psu')) + "," + \
         str(session.get('cooler')) + "," + str(session.get('pc_case')) + ");"
     cur.execute(query)
