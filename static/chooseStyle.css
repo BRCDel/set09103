@@ -19,4 +19,13 @@ li a{
 }
 .select_part{
     padding-top:15px;
+    padding:12px;
+    margin-left:-22px;
+    font-size:24px;
+    background-color:#9577A8;
+    border-radius:25px;
+    text-decoration:none;
+}
+.top_buffer{
+    padding:17px;
 }
