@@ -136,10 +136,6 @@ def choose():
         "cooler" : ["Wattage", "Fans", "Air/Liquid"],
         "pc_case" : ["Incl. Fans", "Max Fans", "Mobo support", "PSU support", "Cooler height", "Dimensions", "Side Panel"],
     }
-    #Fuck it, biting the bullet.
-    #E I G H T   I F   S T A T E M E N T S
-    if type=="cpu":
-        descriptors = ["Cores", "Threads", "Base Clock", "Boost Clock", "Hyperthreading", "Wattage", "Price"]
     return render_template("choose.html", type=type, parts=parts_list, descriptors=descriptors)
 
 @app.route('/clear')
