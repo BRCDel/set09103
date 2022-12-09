@@ -13,12 +13,12 @@
     </ul>
     <p>Compatible parts</p>
     <ul>
-        <li id=descriptor><p id=itemIdPar>ID</p><p>Name</p>{% for desc in descriptors[type] %} <p>{{ desc }}</p> {% endfor %}<p>Price</p><a>Select</a></li>
+        <li id=descriptor><p id=itemIdPar>ID</p><p>Name</p>{% for desc in descriptors[type] %} <p>{{ desc }}</p> {% endfor %}<p>Price</p><a class=select_part>Select</a></li>
         {% for item in parts %}
             <li id=parts_found>
             {% for value in item %}
                 <p class=attributes>{{ value }}</p>
-            {% endfor %} <a href="/builder?type={{type}}&itemId={{item[0]}}" id=select_part class=attributes>Select</a>
+            {% endfor %} <a href="/builder?type={{type}}&itemId={{item[0]}}" class=select_part class=attributes>Select</a>
             </li>
         {% endfor %}
     </ul>
