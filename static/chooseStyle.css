@@ -9,8 +9,6 @@ li a{
 .descriptor{
     display:flex;
     justify-content:space-between;
-    min-width:10%;
-    max-width:100%;
 }
 .attributes{
     min-width:10%;
