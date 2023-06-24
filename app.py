@@ -145,6 +145,19 @@ def clear():
     session['username'] = "sample_user"
     return redirect(url_for('builder'))
 
+@app.route('/publish')
+def publish():
+    db = connect_db()
+    cur = db.cursor()
+    #Yes I know I can do this better by just passing the entire list
+    query = "INSERT INTO lists  VALUES(" + \
+            str(session.get('id')) + "," + str(session.get('username')) + "," + str(session.get('cpu')) + "," + str(session.get('mobo')) + "," + \
+            str(session.get('ram_kit')) + "," + str(session.get('gpu')) + "," + str(session.get('drive')) + "," + str(session.get('psu')) + "," + \
+            str(session.get('cooler')) + "," + str(session.get('pc_case')) + ");"
+    cur.execute(query)
+
+    return redirect(url_for('home'))
+
 @app.route('/404')
 def force404():
     abort(404)
